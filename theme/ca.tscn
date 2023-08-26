@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkrsj5tlmr2iy"]
+[gd_scene load_steps=8 format=3 uid="uid://dkrsj5tlmr2iy"]
 
 [ext_resource type="Texture2D" uid="uid://dp2ix0522o188" path="res://theme/icon_store.png" id="1_2jj8f"]
 [ext_resource type="Texture2D" uid="uid://cvye31l05pb78" path="res://theme/science_017.png" id="1_5xylw"]
 [ext_resource type="Texture2D" uid="uid://q1dvroxskp7m" path="res://theme/science_023.png" id="2_0y1es"]
 [ext_resource type="Texture2D" uid="uid://cd33yubvn73rs" path="res://theme/science_030.png" id="3_mnfi1"]
 [ext_resource type="Texture2D" uid="uid://bmnhusf8k4w2e" path="res://theme/science_032.png" id="4_bk7gu"]
+[ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="5_8jkk1"]
 [ext_resource type="Texture2D" uid="uid://c8bh4obxi7avf" path="res://theme/pauseicon.webp" id="5_du143"]
 
 [node name="playscreen" type="Node2D"]
@@ -58,6 +59,7 @@ offset_right = 375.0
 offset_bottom = 561.0
 grow_horizontal = 0
 scale = Vector2(0.2, 0.2)
+theme = ExtResource("5_8jkk1")
 icon = ExtResource("5_du143")
 
 [node name="shoplist" type="ItemList" parent="UI_ingame"]
