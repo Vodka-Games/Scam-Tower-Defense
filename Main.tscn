@@ -1824,6 +1824,7 @@ offset_right = 1773.0
 offset_bottom = 376.0
 
 [node name="StartButton" type="Button" parent="UI/UI_store"]
+layout_mode = 0
 offset_left = 1312.0
 offset_top = 744.0
 offset_right = 1688.0
@@ -1833,6 +1834,7 @@ offset_bottom = 896.0
 stream = ExtResource("12_h3wo4")
 autoplay = true
 
+[connection signal="click_tower_item" from="UI/UI_ingame" to="TowerInstaller" method="_on_ui_ingame_click_tower_item"]
 [connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
 [connection signal="pressed" from="UI/UI_store/StartButton" to="." method="_on_start_pressed"]
 
