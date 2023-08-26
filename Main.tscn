@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=24 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5sqsl"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ltyrwgtsscv" path="res://map/level_1/TilesetGrass/map1.png" id="6_pxk0l"]
 [ext_resource type="PackedScene" uid="uid://3mjgfjws3uom" path="res://theme/ui_ingame.tscn" id="9_uwln7"]
 [ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://addons/EasyMenus/Scenes/pause_menu.tscn" id="10_rpo5k"]
+[ext_resource type="PackedScene" uid="uid://v7hqg6dcw1o4" path="res://enemy/fat_enemy.tscn" id="11_6ac8t"]
 [ext_resource type="AudioStream" uid="uid://b23uwx2dy8xm" path="res://music/Pendulab BGM.mp3" id="12_h3wo4"]
 [ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="13_11io6"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="14_jxntt"]
@@ -1679,29 +1680,11 @@ wait = 1.0
 
 [node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
+[node name="BasicEnemy4" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("11_6ac8t")]
+
 [node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
 [node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
-
-[node name="Wave2" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
-gap = 0.5
-wait = 3.0
-
-[node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
-
-[node name="Wave3" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
-gap = 0.5
-wait = 1.0
-
-[node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave3" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave3" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave3" instance=ExtResource("3_0jexe")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -1834,6 +1817,7 @@ offset_bottom = 896.0
 stream = ExtResource("12_h3wo4")
 autoplay = true
 
+[connection signal="end_phase" from="Lv1_Path/Spawner" to="Lv1_Path/Spawner" method="_on_end_phase"]
 [connection signal="click_tower_item" from="UI/UI_ingame" to="TowerInstaller" method="_on_ui_ingame_click_tower_item"]
 [connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
 [connection signal="pressed" from="UI/UI_store/StartButton" to="." method="_on_start_pressed"]
