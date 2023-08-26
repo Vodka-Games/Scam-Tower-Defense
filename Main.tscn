@@ -93,7 +93,6 @@ layer_0/tile_data = PackedInt32Array(327680, 917504, 17, 327681, 917504, 17, 327
 script = ExtResource("1_ic3rl")
 
 [node name="TowerUI" type="CanvasLayer" parent="."]
-visible = false
 follow_viewport_enabled = true
 
 [node name="Panel" type="Panel" parent="TowerUI"]

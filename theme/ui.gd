@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	%Label_Timer.text = 
+	%Label_Timer.text = ""
 	pass # Replace with function body.
