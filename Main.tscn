@@ -129,8 +129,10 @@ gap = 5.0
 [node name="UI_ingame" parent="UI" instance=ExtResource("9_uwln7")]
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("10_rpo5k")]
+unique_name_in_owner = true
 visible = false
 
 [connection signal="gui_input" from="TowerUI/Panel" to="TowerInstaller" method="_on_panel_gui_input"]
+[connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
 
 [editable path="UI/UI_ingame"]
