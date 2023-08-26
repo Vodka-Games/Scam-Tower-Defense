@@ -1,16 +1,89 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=10 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="PackedScene" uid="uid://emsjesr7jd4j" path="res://tower/basic_tower.tscn" id="1_8fkri"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
 [ext_resource type="PackedScene" uid="uid://cnxkmwfybdk8a" path="res://map/lv_1_path.tscn" id="3_o8hi5"]
 [ext_resource type="Script" path="res://Spawner.gd" id="5_qh5a0"]
-[ext_resource type="Texture2D" uid="uid://nj5jfqeu3rfx" path="res://tower/bullet.png" id="7_n35fx"]
+[ext_resource type="Texture2D" uid="uid://c1ltyrwgtsscv" path="res://map/level_1/TilesetGrass/map1.png" id="6_pxk0l"]
+[ext_resource type="PackedScene" path="res://tower/bullet.tscn" id="6_t3x52"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jukju"]
+texture = ExtResource("6_pxk0l")
+use_texture_padding = false
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+15:18/0 = 0
+5:23/0 = 0
+4:22/0 = 0
+8:24/0 = 0
+9:24/0 = 0
+9:25/0 = 0
+10:25/0 = 0
+12:25/0 = 0
+12:26/0 = 0
+13:29/0 = 0
+13:30/0 = 0
+13:31/0 = 0
+13:32/0 = 0
+14:32/0 = 0
+15:32/0 = 0
+15:31/0 = 0
+15:30/0 = 0
+14:30/0 = 0
+14:31/0 = 0
+14:29/0 = 0
+15:29/0 = 0
+16:29/0 = 0
+16:30/0 = 0
+16:31/0 = 0
+14:28/0 = 0
+15:27/0 = 0
+15:28/0 = 0
+16:27/0 = 0
+16:28/0 = 0
+17:27/0 = 0
+17:28/0 = 0
+17:29/0 = 0
+17:30/0 = 0
+15:24/0 = 0
+15:25/0 = 0
+9:27/0 = 0
+8:27/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_f374n"]
-tile_size = Vector2i(96, 96)
+sources/0 = SubResource("TileSetAtlasSource_jukju")
 
 [node name="Main" type="Node2D"]
+
+[node name="Background" type="TileMap" parent="."]
+position = Vector2(48, 48)
+scale = Vector2(6, 6)
+tile_set = SubResource("TileSet_f374n")
+format = 2
+layer_0/tile_data = PackedInt32Array(327680, 917504, 17, 327681, 917504, 17, 327682, 917504, 17, 327683, 917504, 17, 327684, 917504, 17, 327685, 917504, 17, 327686, 983040, 25, 262150, 983040, 24, 196614, 983040, 24, 131082, 589824, 24, 131081, 917504, 17, 131080, 917504, 17, 131079, 917504, 17, 196618, 786432, 26, 262154, 786432, 26, 327690, 786432, 26, 393226, 786432, 26, 458762, 786432, 26, 524299, 655360, 25, 524300, 655360, 25, 524301, 655360, 25, 524302, 655360, 25, 524303, 655360, 25, 524304, 655360, 25, 524305, 655360, 25, 524306, 655360, 25, 524298, 589824, 25)
 
 [node name="TowerInstaller" type="Node2D" parent="."]
 script = ExtResource("1_ic3rl")
@@ -42,12 +115,6 @@ rotation = -0.00793634
 [node name="Spawner" type="Node2D" parent="Lv1_Path"]
 script = ExtResource("5_qh5a0")
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(48, 48)
-tile_set = SubResource("TileSet_f374n")
-format = 2
-
-[node name="Bullet" type="Sprite2D" parent="."]
-texture = ExtResource("7_n35fx")
+[node name="Bullet" parent="." instance=ExtResource("6_t3x52")]
 
 [connection signal="gui_input" from="TowerUI/Panel" to="TowerInstaller" method="_on_panel_gui_input"]

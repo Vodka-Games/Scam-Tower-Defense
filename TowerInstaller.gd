@@ -14,7 +14,7 @@ func pick_tower(pos):
 	add_child(temp_tower)
 	
 	temp_tower.put_on_tile(pos)
-
+	
 func install_tower(obj):
 	self.is_picking = false
 
