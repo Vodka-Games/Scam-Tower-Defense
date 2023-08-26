@@ -1,6 +1,6 @@
 extends Area2D
 
-var follwer: PathFollow2D
+var follower = null
 @export var speed :int
 
 @export var max_hp:int
@@ -10,18 +10,27 @@ var id: int
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	follwer = get_parent()
+	var parent = get_parent()
+	
+	if parent is PathFollow2D:
+		follower = parent
+		
 	hp = max_hp
 	id = rng.randi()
+	
+	hide()
 
 func _physics_process(delta):
-	follwer.progress += delta * speed
+	if not follower is PathFollow2D:
+		return
+		
+	follower.progress += delta * speed
 	
 func get_progress():
-	return follwer.progress
+	return follower.progress
 
 func damage(d):
 	hp -= d
 	
 	if hp <= 0:
-		follwer.queue_free()
+		follower.queue_free()

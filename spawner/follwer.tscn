@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bnawv06qxvttv"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+position = Vector2(5, 528)
+rotation = 0.00793634
+
+[node name="_Timer_479129" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
