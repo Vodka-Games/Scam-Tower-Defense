@@ -9,3 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_ui_ingame_pause():
+	$UI/PauseMenu.open_pause_menu()

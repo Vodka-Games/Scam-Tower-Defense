@@ -193,4 +193,8 @@ theme_override_font_sizes/font_size = 56
 text = "Enemy Left: 00"
 horizontal_alignment = 1
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
