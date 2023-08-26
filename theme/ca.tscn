@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkrsj5tlmr2iy"]
+[gd_scene load_steps=6 format=3 uid="uid://dkrsj5tlmr2iy"]
 
 [ext_resource type="Texture2D" uid="uid://dp2ix0522o188" path="res://theme/icon_store.png" id="1_2jj8f"]
+[ext_resource type="Texture2D" uid="uid://cvye31l05pb78" path="res://theme/science_017.png" id="1_5xylw"]
+[ext_resource type="Texture2D" uid="uid://q1dvroxskp7m" path="res://theme/science_023.png" id="2_0y1es"]
+[ext_resource type="Texture2D" uid="uid://cd33yubvn73rs" path="res://theme/science_030.png" id="3_mnfi1"]
+[ext_resource type="Texture2D" uid="uid://bmnhusf8k4w2e" path="res://theme/science_032.png" id="4_bk7gu"]
 
 [node name="ca" type="Node2D"]
 
@@ -18,14 +22,20 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -487.0
-offset_top = -201.0
+offset_top = -132.0
 offset_right = 287.0
 grow_horizontal = 2
 grow_vertical = 0
-item_count = 3
+item_count = 4
+max_columns = 5
 item_0/text = ""
+item_0/icon = ExtResource("1_5xylw")
 item_1/text = ""
+item_1/icon = ExtResource("2_0y1es")
 item_2/text = ""
+item_2/icon = ExtResource("3_mnfi1")
+item_3/text = ""
+item_3/icon = ExtResource("4_bk7gu")
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
