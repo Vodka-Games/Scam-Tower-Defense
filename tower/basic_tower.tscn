@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://emsjesr7jd4j"]
 
-[ext_resource type="Texture2D" uid="uid://dmftt8lyryysr" path="res://icon.svg" id="1_sem7a"]
-[ext_resource type="Script" path="res://Tower.gd" id="2_0sh16"]
+[ext_resource type="Texture2D" uid="uid://dmftt8lyryysr" path="res://icon.svg" id="1_65ciw"]
+[ext_resource type="Script" path="res://Tower.gd" id="2_f4x70"]
 
 [node name="Tower" type="Sprite2D"]
-position = Vector2(0, 2)
-texture = ExtResource("1_sem7a")
+texture = ExtResource("1_65ciw")
 offset = Vector2(64, 64)
-script = ExtResource("2_0sh16")
+script = ExtResource("2_f4x70")

@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=8 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="PackedScene" uid="uid://emsjesr7jd4j" path="res://tower/basic_tower.tscn" id="1_8fkri"]
+[ext_resource type="Texture2D" uid="uid://dmftt8lyryysr" path="res://icon.svg" id="1_caopj"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
-[ext_resource type="PackedScene" uid="uid://dp28yj0vcdrlr" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
+[ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
+[ext_resource type="PackedScene" uid="uid://cnxkmwfybdk8a" path="res://map/lv_1_path.tscn" id="3_o8hi5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_024ss"]
+texture = ExtResource("1_caopj")
+texture_region_size = Vector2i(96, 96)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cn83p"]
+tile_size = Vector2i(96, 96)
+sources/1 = SubResource("TileSetAtlasSource_024ss")
 
 [node name="Main" type="Node2D"]
 
@@ -25,6 +36,19 @@ grow_vertical = 2
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 
-[node name="BasicEnemy" parent="EnemySpawner" instance=ExtResource("3_0jexe")]
+[node name="LvPath" parent="EnemySpawner" instance=ExtResource("3_o8hi5")]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner/LvPath"]
+position = Vector2(5, 528)
+rotation = 0.00793634
+
+[node name="BasicEnemy" parent="EnemySpawner/LvPath/PathFollow2D" instance=ExtResource("3_0jexe")]
+rotation = -0.00793634
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource("TileSet_cn83p")
+format = 2
+layer_0/tile_data = PackedInt32Array(327680, 1, 0, 327681, 1, 0, 327683, 1, 0, 327682, 1, 0, 327684, 1, 0, 327686, 1, 0, 327685, 1, 0, 262150, 1, 0, 196614, 1, 0, 131078, 1, 0, 131080, 1, 0, 131079, 1, 0, 131081, 1, 0, 131082, 1, 0, 196618, 1, 0, 262154, 1, 0, 327690, 1, 0, 393226, 1, 0, 458762, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0)
 
 [connection signal="gui_input" from="TowerUI/Panel" to="TowerInstaller" method="_on_panel_gui_input"]
