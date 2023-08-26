@@ -24,3 +24,13 @@ func close_options():
 
 func _on_start_game_button_pressed():
 	emit_signal("start_game_pressed")
+
+
+func _on_tutorial_button_pressed():
+	%TutorialMenu.show()
+	pass # Replace with function body.
+
+
+func _on_tutorial_close_pressed():
+	%TutorialMenu.hide()
+	pass # Replace with function body.

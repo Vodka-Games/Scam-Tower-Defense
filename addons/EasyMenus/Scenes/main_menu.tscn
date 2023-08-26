@@ -70,12 +70,24 @@ focus_previous = NodePath("../OptionsButton")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
+[node name="TutorialButton" type="Button" parent="Content"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../StartGameButton")
+focus_next = NodePath("../StartGameButton")
+focus_previous = NodePath("../OptionsButton")
+theme_override_font_sizes/font_size = 30
+text = "Tutorial"
+
 [node name="OptionsMenu" parent="." instance=ExtResource("2_pwqpr")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
 [node name="TutorialMenu" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,7 +103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="close" type="Button" parent="TutorialMenu"]
+[node name="tutorial_close" type="Button" parent="TutorialMenu"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -105,4 +117,6 @@ grow_horizontal = 0
 [connection signal="pressed" from="Content/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Content/OptionsButton" to="." method="open_options"]
 [connection signal="pressed" from="Content/QuitButton" to="." method="quit"]
+[connection signal="pressed" from="Content/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="close" from="OptionsMenu" to="." method="close_options"]
+[connection signal="pressed" from="TutorialMenu/tutorial_close" to="." method="_on_tutorial_close_pressed"]
