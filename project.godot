@@ -27,3 +27,8 @@ window/size/viewport_height=1080
 [dotnet]
 
 project/assembly_name="Scam-Tower-Defense"
+
+[gui]
+
+theme/custom="res://theme/maintheme.tres"
+theme/custom_font="res://theme/DungGeunMo.ttf"

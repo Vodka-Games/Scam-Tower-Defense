@@ -75,6 +75,33 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
+[node name="TutorialMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="TutorialMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="close" type="Button" parent="TutorialMenu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -124.0
+offset_top = 35.0
+offset_right = -34.0
+offset_bottom = 130.0
+grow_horizontal = 0
+
 [connection signal="pressed" from="Content/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Content/OptionsButton" to="." method="open_options"]
 [connection signal="pressed" from="Content/QuitButton" to="." method="quit"]

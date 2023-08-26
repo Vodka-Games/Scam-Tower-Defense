@@ -22,9 +22,23 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -171.0
-offset_right = 510.0
+offset_right = 441.0
 grow_vertical = 0
 color = Color(1, 0, 1, 1)
+
+[node name="Label" type="Label" parent="UI_ingame/RuntimeLevelname"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -171.0
+offset_right = 41.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="ItemList" type="ItemList" parent="UI_ingame"]
 anchors_preset = 7
@@ -32,14 +46,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -449.5
+offset_left = -516.0
 offset_top = -174.0
-offset_right = 449.5
+offset_right = 444.0
 grow_horizontal = 2
 grow_vertical = 0
 item_count = 4
 max_columns = 5
 fixed_column_width = 170
+icon_mode = 0
+icon_scale = 2.0
 item_0/text = ""
 item_0/icon = ExtResource("1_5xylw")
 item_1/text = ""
@@ -70,16 +86,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -513.0
 offset_top = -174.0
+offset_right = 9.0
 grow_horizontal = 0
 grow_vertical = 0
 item_count = 3
 max_columns = 3
 icon_mode = 0
-item_0/text = "Korea"
+item_0/text = ""
 item_0/icon = ExtResource("1_2jj8f")
-item_1/text = "China"
+item_1/text = ""
 item_1/icon = ExtResource("1_2jj8f")
-item_2/text = "Japan"
+item_2/text = ""
 item_2/icon = ExtResource("1_2jj8f")
 
 [node name="Enemynumber" type="ColorRect" parent="UI_ingame"]
