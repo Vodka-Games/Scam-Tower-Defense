@@ -5,7 +5,7 @@
 [ext_resource type="Animation" uid="uid://bnojof4um17og" path="res://enemy/idle.res" id="3_n7tph"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qxmd"]
-radius = 64.0
+radius = 48.0
 
 [sub_resource type="Animation" id="Animation_4d8cm"]
 length = 0.001
