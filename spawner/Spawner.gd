@@ -4,13 +4,21 @@ var path
 var waves = []
 var cur_w
 
+func start_phase():
+	var count = get_count_enemies()
+	Global.set_count_enemies(count)
+	start_spawn(path)
+
+func get_count_enemies():
+	var enemies = find_children("*","Area2D", true)
+	return enemies.size()
+	
 func _ready():
 	for w in get_children():
 		if not w is Timer:
 			waves.append(w)
 			
 	path = get_parent()
-	start_spawn(path)
 	
 func start_spawn(p):
 	if not waves.is_empty():

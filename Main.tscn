@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=21 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5sqsl"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
 [ext_resource type="PackedScene" uid="uid://cnxkmwfybdk8a" path="res://map/lv_1_path.tscn" id="3_o8hi5"]
 [ext_resource type="Texture2D" uid="uid://dnj5nvmiiq0oc" path="res://map/level_1/TilesetGrass/map2.png" id="3_p8kuo"]
-[ext_resource type="PackedScene" uid="uid://bnawv06qxvttv" path="res://spawner/follwer.tscn" id="4_g8hf7"]
 [ext_resource type="Texture2D" uid="uid://bgvmrfcqmu77p" path="res://map/level_1/TilesetGrass/overworld_tileset_grass.png" id="4_jh48i"]
 [ext_resource type="PackedScene" uid="uid://bt51p6kp2jaoa" path="res://spawner/spawner.tscn" id="5_kp1d7"]
 [ext_resource type="PackedScene" uid="uid://dkjf8qbsohc72" path="res://spawner/wave.tscn" id="6_hedsn"]
@@ -13,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://3mjgfjws3uom" path="res://theme/ui_ingame.tscn" id="9_uwln7"]
 [ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://addons/EasyMenus/Scenes/pause_menu.tscn" id="10_rpo5k"]
 [ext_resource type="AudioStream" uid="uid://b23uwx2dy8xm" path="res://music/Pendulab BGM.mp3" id="12_h3wo4"]
-[ext_resource type="Texture2D" uid="uid://bdjvsje15q1gd" path="res://tower/var/img/classic.png" id="12_senof"]
 [ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="13_11io6"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="14_jxntt"]
 [ext_resource type="Script" path="res://cost_display.gd" id="16_gf8qc"]
@@ -1186,10 +1184,8 @@ script = ExtResource("1_ic3rl")
 [node name="Lv1_Path" parent="." instance=ExtResource("3_o8hi5")]
 position = Vector2(48, 48)
 
-[node name="PathFollow2D" parent="Lv1_Path" instance=ExtResource("4_g8hf7")]
-rotation = -0.628796
-
 [node name="Spawner" parent="Lv1_Path" instance=ExtResource("5_kp1d7")]
+unique_name_in_owner = true
 
 [node name="Wave" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
 gap = 5.0
@@ -1225,13 +1221,13 @@ wait = 1.0
 follow_viewport_enabled = true
 
 [node name="UI_ingame" parent="UI" instance=ExtResource("9_uwln7")]
+unique_name_in_owner = true
 
 [node name="Button" parent="UI/UI_ingame/ItemButtonList" index="0"]
 offset_left = -177.5
 offset_top = -110.0
 offset_right = -108.5
 offset_bottom = -41.0001
-texture_normal = ExtResource("12_senof")
 stretch_mode = 0
 
 [node name="Button2" parent="UI/UI_ingame/ItemButtonList" index="1"]
@@ -1260,6 +1256,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="UI_store" type="Control" parent="UI"]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1361,10 +1358,14 @@ text = "1000
 "
 script = ExtResource("16_gf8qc")
 
-[node name="TextureRect" type="TextureRect" parent="UI/UI_store/ColorRect"]
+[node name="StartButton" type="Button" parent="UI/UI_store/ColorRect"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1503.0
+offset_top = 294.0
+offset_right = 1773.0
+offset_bottom = 376.0
+text = "페이즈 시작하기
+"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_h3wo4")
@@ -1372,5 +1373,6 @@ autoplay = true
 
 [connection signal="click_tower_item" from="UI/UI_ingame" to="TowerInstaller" method="_on_ui_ingame_click_tower_item"]
 [connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
+[connection signal="pressed" from="UI/UI_store/ColorRect/StartButton" to="." method="_on_start_pressed"]
 
 [editable path="UI/UI_ingame"]

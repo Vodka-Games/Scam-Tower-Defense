@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://tower/bullet.gd" id="1_vj435"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0h38p"]
-radius = 29.2
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 4
@@ -15,6 +14,7 @@ speed = 1000
 shape = SubResource("CircleShape2D_0h38p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("1_gbson")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

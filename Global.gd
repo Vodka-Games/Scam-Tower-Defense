@@ -1,9 +1,18 @@
 extends Node
 
 var money = 1000
+var count_enemies = 0
 
 var towers = []
 var tower_dict = {}
+
+var tower_display = null
+
+func set_tower_display(obj):
+	tower_display = obj
+
+func update_display():
+	tower_display.update()
 
 func load_tower():
 	var tower_path = "res://tower/var/"
@@ -47,10 +56,11 @@ func buy_tower(tower_name, amount):
 	if not ret:
 		return false
 	
+
 	for tower in towers:
-			
 		if tower['name'] == tower_name:
 			tower['amount'] += 1
+			update_display()
 			return true
 	
 	var item_dict = {}
@@ -58,7 +68,7 @@ func buy_tower(tower_name, amount):
 	item_dict['amount'] = 1
 	
 	towers.append(item_dict)
-			
+	update_display()
 
 func buy_item(amount):
 	if money < amount:
@@ -72,5 +82,21 @@ func get_tower(idx):
 		return null
 	return towers[idx]
 	
+func get_tower_scene(name):
+	return tower_dict[name]['scene']
+	
 func get_tower_img(name):
 	return tower_dict[name]['img']
+	
+func set_count_enemies(amount):
+	count_enemies = amount
+	
+func decrease_enemies():
+	count_enemies -= 1
+	assert(count_enemies >= 0)
+	
+func get_count_enemies():
+	return count_enemies
+	
+#func install_tower(name):
+#	towers
