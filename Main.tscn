@@ -1212,6 +1212,5 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
-[connection signal="click_tower_item" from="UI/UI_ingame" to="TowerInstaller" method="_on_ui_ingame_click_tower_item"]
 
 [editable path="UI/UI_ingame"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://3mjgfjws3uom"]
+[gd_scene load_steps=6 format=3 uid="uid://3mjgfjws3uom"]
 
 [ext_resource type="Texture2D" uid="uid://bjqs06t6lkhb1" path="res://theme/itembox.asprite.png" id="1_2a1k0"]
 [ext_resource type="Script" path="res://theme/ui_ingame.gd" id="1_u0b3c"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="2_nxh5u"]
-[ext_resource type="Script" path="res://theme/item_button_list.gd" id="3_cl3tb"]
 [ext_resource type="Texture2D" uid="uid://c8bh4obxi7avf" path="res://theme/pauseicon.webp" id="3_m7isl"]
 [ext_resource type="Texture2D" uid="uid://dp2ix0522o188" path="res://theme/icon_store.png" id="4_38o13"]
 
@@ -61,7 +60,7 @@ theme_override_font_sizes/font_size = 60
 text = "00:00"
 horizontal_alignment = 1
 
-[node name="ItemButtonList" type="TextureRect" parent="."]
+[node name="ItemboxOutline" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -76,9 +75,8 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_2a1k0")
-script = ExtResource("3_cl3tb")
 
-[node name="Button" type="Button" parent="ItemButtonList"]
+[node name="Button" type="Button" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -92,7 +90,7 @@ offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button2" type="Button" parent="ItemButtonList"]
+[node name="Button2" type="Button" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -106,7 +104,7 @@ offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button3" type="Button" parent="ItemButtonList"]
+[node name="Button3" type="Button" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -120,7 +118,7 @@ offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button4" type="Button" parent="ItemButtonList"]
+[node name="Button4" type="Button" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
