@@ -16,3 +16,6 @@ func buy_item(amount):
 	else:
 		money -= amount
 		return true
+		
+func get_tower(idx):
+	return towers[idx]

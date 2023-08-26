@@ -1,7 +1,7 @@
 extends Control
 
 signal pause
-
+signal click_tower_item
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
