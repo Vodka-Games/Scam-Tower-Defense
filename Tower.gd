@@ -1,6 +1,7 @@
-extends Sprite2D
+extends Area2D
 
 var tile_size = 96
+var range = 3 
 
 var is_floating = false
 var is_install = false
@@ -9,8 +10,8 @@ func _physics_process(delta):
 	pass
 	
 func _ready():
-	
 	is_floating = true
+	$Range.shape.radius = range * tile_size
 	
 func install():
 	is_floating = false
@@ -18,6 +19,7 @@ func install():
 	get_parent().install_tower(self)
 
 func put_on_tile(pos):
+	pos += Vector2.ONE * tile_size / 2
 	self.global_position = floor(pos / tile_size) * tile_size
 
 func _unhandled_input(event):
@@ -28,3 +30,5 @@ func _unhandled_input(event):
 			var m_pos = event.position
 			put_on_tile(m_pos)
 			
+func _on_area_entered(area):
+	print(area)
