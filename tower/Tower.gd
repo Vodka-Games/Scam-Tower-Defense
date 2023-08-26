@@ -90,6 +90,7 @@ func create_bullet(target):
 func attack_target():
 	if not target == null:
 		create_bullet(target)
+		$AnimationPlayer.play("shoot")
 
 func _on_area_entered(area):
 	enemies_in_range[area.id] = area

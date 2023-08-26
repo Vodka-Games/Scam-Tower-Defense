@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=24 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5sqsl"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://b23uwx2dy8xm" path="res://music/Pendulab BGM.mp3" id="12_h3wo4"]
 [ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="13_11io6"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="14_jxntt"]
+[ext_resource type="FontVariation" uid="uid://cooroq3xx8o5g" path="res://theme/font_cookie.tres" id="16_6jrpr"]
 [ext_resource type="Script" path="res://cost_display.gd" id="16_gf8qc"]
 [ext_resource type="PackedScene" uid="uid://gl3q278dlrbb" path="res://store/BuyCard.tscn" id="16_infs8"]
 
@@ -1753,6 +1754,8 @@ texture = ExtResource("13_11io6")
 [node name="Label" type="Label" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("14_jxntt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "asdfasdfasdfasdfasdfasdf"
 
@@ -1771,6 +1774,8 @@ texture = ExtResource("13_11io6")
 [node name="Label" type="Label" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("14_jxntt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "asdfasdfasdfasdfasdfasdf"
 
@@ -1784,6 +1789,8 @@ texture = ExtResource("13_11io6")
 [node name="Label" type="Label" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("14_jxntt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "asdfasdfasdfasdfasdfasdf"
 
@@ -1811,6 +1818,9 @@ offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_6jrpr")
 theme_override_font_sizes/font_size = 64
 text = "1000
 "
