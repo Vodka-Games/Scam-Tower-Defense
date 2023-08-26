@@ -14,3 +14,7 @@ config/name="Scam-Tower_Defense"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Scam-Tower_Defense"

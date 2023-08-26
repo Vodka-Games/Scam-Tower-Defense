@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://emsjesr7jd4j" path="res://tower/basic_tower.tscn" id="1_8fkri"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
-[ext_resource type="PackedScene" uid="uid://dp28yj0vcdrlr" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
+[ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
 
 [node name="Main" type="Node2D"]
 

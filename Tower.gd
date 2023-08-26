@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var tile_size = 128
+var tile_size = 96
 
 var is_floating = false
 var is_install = false
@@ -9,6 +9,7 @@ func _physics_process(delta):
 	pass
 	
 func _ready():
+	
 	is_floating = true
 	
 func install():
