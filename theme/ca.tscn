@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dkrsj5tlmr2iy"]
+
+[node name="ca" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -487.5
+offset_top = -201.0
+offset_right = 487.5
+grow_horizontal = 2
+grow_vertical = 0
+item_count = 3
+item_0/text = ""
+item_1/text = ""
+item_2/text = ""
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 44.0
+offset_right = -46.0
+offset_bottom = 140.0
+grow_horizontal = 0
+
+[node name="shoplist" type="ItemList" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.00417
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -473.0
+offset_top = -201.0
+grow_horizontal = 0
+grow_vertical = 0
+item_count = 3
+max_columns = 3
+item_0/text = "Korea"
+item_1/text = "China"
+item_2/text = "Japan"
+metadata/_edit_use_anchors_ = true
