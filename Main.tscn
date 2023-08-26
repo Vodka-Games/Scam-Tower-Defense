@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=14 format=3 uid="uid://dxnf3klxl5wf1"]
 
+[ext_resource type="Script" path="res://Main.gd" id="1_5sqsl"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
 [ext_resource type="PackedScene" uid="uid://cnxkmwfybdk8a" path="res://map/lv_1_path.tscn" id="3_o8hi5"]
@@ -80,6 +81,7 @@ use_texture_padding = false
 sources/0 = SubResource("TileSetAtlasSource_jukju")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_5sqsl")
 
 [node name="Background" type="TileMap" parent="."]
 position = Vector2(48, 48)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://3mjgfjws3uom"]
+[gd_scene load_steps=6 format=3 uid="uid://3mjgfjws3uom"]
 
 [ext_resource type="Texture2D" uid="uid://bjqs06t6lkhb1" path="res://theme/itembox.asprite.png" id="1_2a1k0"]
+[ext_resource type="Script" path="res://theme/ui_ingame.gd" id="1_u0b3c"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="2_nxh5u"]
 [ext_resource type="Texture2D" uid="uid://c8bh4obxi7avf" path="res://theme/pauseicon.webp" id="3_m7isl"]
 [ext_resource type="Texture2D" uid="uid://dp2ix0522o188" path="res://theme/icon_store.png" id="4_38o13"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u0b3c")
 
 [node name="RuntimeLevelname" type="ColorRect" parent="."]
 layout_mode = 1
@@ -188,3 +190,5 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 56
 text = "Enemy Left: 00"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
