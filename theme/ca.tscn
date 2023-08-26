@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dkrsj5tlmr2iy"]
+[gd_scene load_steps=2 format=3 uid="uid://dkrsj5tlmr2iy"]
+
+[ext_resource type="Texture2D" uid="uid://dp2ix0522o188" path="res://theme/icon_store.png" id="1_2jj8f"]
 
 [node name="ca" type="Node2D"]
 
@@ -15,9 +17,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -487.5
+offset_left = -487.0
 offset_top = -201.0
-offset_right = 487.5
+offset_right = 287.0
 grow_horizontal = 2
 grow_vertical = 0
 item_count = 3
@@ -36,18 +38,21 @@ offset_bottom = 140.0
 grow_horizontal = 0
 
 [node name="shoplist" type="ItemList" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 1.00417
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -473.0
-offset_top = -201.0
+offset_left = -513.0
+offset_top = -216.0
 grow_horizontal = 0
 grow_vertical = 0
 item_count = 3
 max_columns = 3
+icon_mode = 0
 item_0/text = "Korea"
+item_0/icon = ExtResource("1_2jj8f")
 item_1/text = "China"
+item_1/icon = ExtResource("1_2jj8f")
 item_2/text = "Japan"
-metadata/_edit_use_anchors_ = true
+item_2/icon = ExtResource("1_2jj8f")
