@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxnf3klxl5wf1"]
+
+[ext_resource type="PackedScene" uid="uid://emsjesr7jd4j" path="res://tower/basic_tower.tscn" id="1_8fkri"]
+[ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
+[ext_resource type="PackedScene" uid="uid://dp28yj0vcdrlr" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TowerInstaller" type="Node2D" parent="."]
+script = ExtResource("1_ic3rl")
+
+[node name="Tower" parent="TowerInstaller" instance=ExtResource("1_8fkri")]
+
+[node name="TowerUI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Panel" type="Panel" parent="TowerUI"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+
+[node name="BasicEnemy" parent="EnemySpawner" instance=ExtResource("3_0jexe")]
+
+[connection signal="gui_input" from="TowerUI/Panel" to="TowerInstaller" method="_on_panel_gui_input"]
