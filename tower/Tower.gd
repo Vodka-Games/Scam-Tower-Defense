@@ -15,13 +15,16 @@ var target = null
 var bullet_scene = preload("res://tower/bullet.tscn")
 
 func _physics_process(delta):
-	pass
+	if is_floating:
+		var m_pos = get_global_mouse_position()
+		put_on_tile(m_pos)
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			install()
 	
 func _ready():
 	is_floating = true
 	$Range.shape.radius = range * tile_size
 	$AttackTimer.wait_time = attack_gap
-	
 	
 func install():
 	is_floating = false
@@ -34,10 +37,11 @@ func put_on_tile(pos):
 	self.global_position = floor(pos / tile_size) * tile_size
 
 func _unhandled_input(event):
+	print(event)
 	if is_floating:
 		if event is InputEventMouseButton:
 			install()
-		elif event is InputEventMouseMotion:
+		if event is InputEventMouseMotion:
 			var m_pos = event.position
 			put_on_tile(m_pos)
 			

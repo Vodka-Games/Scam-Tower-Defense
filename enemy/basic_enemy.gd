@@ -38,3 +38,4 @@ func damage(d):
 	
 	if hp <= 0:
 		follower.queue_free()
+		Global.decrease_enemies()

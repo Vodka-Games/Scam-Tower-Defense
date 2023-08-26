@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,3 +13,8 @@ func _process(delta):
 
 func _on_ui_ingame_pause():
 	$UI/PauseMenu.open_pause_menu()
+	
+func _on_start_pressed():
+	$%Spawner.start_phase() # TODO: update
+	$%UI_ingame.start_phase()
+	$%UI_store.hide()

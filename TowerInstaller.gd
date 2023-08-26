@@ -1,8 +1,5 @@
 extends Node2D
 
-#var tower = preload("res://tower/basic_tower.tscn")
-
-
 var is_picking = false
 
 func pick_tower(pos, tower):
@@ -21,4 +18,7 @@ func install_tower(obj):
 
 func _on_ui_ingame_click_tower_item(idx):
 	var tower = Global.get_tower(idx)
-#	pick_tower(event.global_position, tower)
+	var tower_scene = Global.get_tower_scene(tower['name'])
+	
+	var pos = get_global_mouse_position()
+	pick_tower(pos, tower_scene)
