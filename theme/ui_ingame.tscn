@@ -76,7 +76,7 @@ grow_vertical = 0
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_2a1k0")
 
-[node name="Button" type="Button" parent="ItemboxOutline"]
+[node name="Button" type="TextureButton" parent="ItemButtonList"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -90,7 +90,22 @@ offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button2" type="Button" parent="ItemboxOutline"]
+[node name="Label" type="Label" parent="ItemButtonList/Button"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("2_nxh5u")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
+
+[node name="Button2" type="TextureButton" parent="ItemButtonList"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -104,7 +119,22 @@ offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button3" type="Button" parent="ItemboxOutline"]
+[node name="Label" type="Label" parent="ItemButtonList/Button2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("2_nxh5u")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
+
+[node name="Button3" type="TextureButton" parent="ItemButtonList"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -118,7 +148,22 @@ offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button4" type="Button" parent="ItemboxOutline"]
+[node name="Label" type="Label" parent="ItemButtonList/Button3"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("2_nxh5u")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
+
+[node name="Button4" type="TextureButton" parent="ItemButtonList"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -131,6 +176,21 @@ offset_right = 188.5
 offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Label" type="Label" parent="ItemButtonList/Button4"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("2_nxh5u")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
 
 [node name="Pause_Button" type="Button" parent="."]
 layout_mode = 1

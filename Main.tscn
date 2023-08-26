@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=23 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5sqsl"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
@@ -10,10 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://bt51p6kp2jaoa" path="res://spawner/spawner.tscn" id="5_kp1d7"]
 [ext_resource type="PackedScene" uid="uid://dkjf8qbsohc72" path="res://spawner/wave.tscn" id="6_hedsn"]
 [ext_resource type="Texture2D" uid="uid://c1ltyrwgtsscv" path="res://map/level_1/TilesetGrass/map1.png" id="6_pxk0l"]
-[ext_resource type="PackedScene" uid="uid://c3igvud5md3g2" path="res://tower/bullet.tscn" id="6_t3x52"]
 [ext_resource type="PackedScene" uid="uid://3mjgfjws3uom" path="res://theme/ui_ingame.tscn" id="9_uwln7"]
 [ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://addons/EasyMenus/Scenes/pause_menu.tscn" id="10_rpo5k"]
 [ext_resource type="AudioStream" uid="uid://b23uwx2dy8xm" path="res://music/Pendulab BGM.mp3" id="12_h3wo4"]
+[ext_resource type="Texture2D" uid="uid://bdjvsje15q1gd" path="res://tower/var/img/classic.png" id="12_senof"]
+[ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="13_11io6"]
+[ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="14_jxntt"]
+[ext_resource type="Script" path="res://cost_display.gd" id="16_gf8qc"]
+[ext_resource type="PackedScene" uid="uid://gl3q278dlrbb" path="res://store/BuyCard.tscn" id="16_infs8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jukju"]
 texture = ExtResource("6_pxk0l")
@@ -1183,11 +1187,13 @@ script = ExtResource("1_ic3rl")
 position = Vector2(48, 48)
 
 [node name="PathFollow2D" parent="Lv1_Path" instance=ExtResource("4_g8hf7")]
+rotation = -0.628796
 
 [node name="Spawner" parent="Lv1_Path" instance=ExtResource("5_kp1d7")]
 
 [node name="Wave" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
 gap = 5.0
+wait = 1.0
 
 [node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
@@ -1195,21 +1201,174 @@ gap = 5.0
 
 [node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
-[node name="Bullet" parent="." instance=ExtResource("6_t3x52")]
+[node name="Wave2" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
+gap = 0.5
+wait = 3.0
+
+[node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
+
+[node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
+
+[node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
+
+[node name="Wave3" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
+gap = 0.5
+wait = 1.0
+
+[node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave3" instance=ExtResource("3_0jexe")]
+
+[node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave3" instance=ExtResource("3_0jexe")]
+
+[node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave3" instance=ExtResource("3_0jexe")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
 [node name="UI_ingame" parent="UI" instance=ExtResource("9_uwln7")]
 
+[node name="Button" parent="UI/UI_ingame/ItemButtonList" index="0"]
+offset_left = -177.5
+offset_top = -110.0
+offset_right = -108.5
+offset_bottom = -41.0001
+texture_normal = ExtResource("12_senof")
+stretch_mode = 0
+
+[node name="Button2" parent="UI/UI_ingame/ItemButtonList" index="1"]
+offset_left = -80.5
+offset_top = -110.0
+offset_right = -11.5
+offset_bottom = -41.0001
+stretch_mode = 0
+
+[node name="Button3" parent="UI/UI_ingame/ItemButtonList" index="2"]
+offset_left = 11.5
+offset_top = -110.0
+offset_right = 80.5
+offset_bottom = -41.0001
+stretch_mode = 0
+
+[node name="Button4" parent="UI/UI_ingame/ItemButtonList" index="3"]
+offset_left = 108.214
+offset_top = -110.0
+offset_right = 177.214
+offset_bottom = -41.0001
+stretch_mode = 0
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("10_rpo5k")]
 unique_name_in_owner = true
 visible = false
 
+[node name="UI_store" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/UI_store"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.921569)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UI_store/ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -388.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UI_store/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="UI/UI_store/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_11io6")
+
+[node name="Label" type="Label" parent="UI/UI_store/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_jxntt")
+theme_override_font_sizes/font_size = 24
+text = "asdfasdfasdfasdfasdfasdf"
+
+[node name="Panel" parent="UI/UI_store/ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "classic"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UI_store/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/UI_store/ColorRect/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("13_11io6")
+
+[node name="Label" type="Label" parent="UI/UI_store/ColorRect/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("14_jxntt")
+theme_override_font_sizes/font_size = 24
+text = "asdfasdfasdfasdfasdfasdf"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UI_store/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/UI_store/ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("13_11io6")
+
+[node name="Label" type="Label" parent="UI/UI_store/ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("14_jxntt")
+theme_override_font_sizes/font_size = 24
+text = "asdfasdfasdfasdfasdfasdf"
+
+[node name="Panel" type="Panel" parent="UI/UI_store/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 32.0
+offset_right = 210.0
+offset_bottom = 72.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/UI_store/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "1000
+"
+script = ExtResource("16_gf8qc")
+
+[node name="TextureRect" type="TextureRect" parent="UI/UI_store/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_h3wo4")
 autoplay = true
-bus = &"Music"
 
 [connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
 
