@@ -1,11 +1,18 @@
 extends Node
 
+var money = 1000
+var towers = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for i in range(4):
+		towers.append(null)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func buy_item(amount):
+	if money < amount:
+		return false
+	else:
+		money -= amount
+		return true
