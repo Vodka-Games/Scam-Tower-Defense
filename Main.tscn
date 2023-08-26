@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=12 format=3 uid="uid://dxnf3klxl5wf1"]
 
+[ext_resource type="PackedScene" uid="uid://dkrsj5tlmr2iy" path="res://theme/ca.tscn" id="1_7026l"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
 [ext_resource type="PackedScene" uid="uid://cnxkmwfybdk8a" path="res://map/lv_1_path.tscn" id="3_o8hi5"]
@@ -7,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bt51p6kp2jaoa" path="res://spawner/spawner.tscn" id="5_kp1d7"]
 [ext_resource type="PackedScene" uid="uid://dkjf8qbsohc72" path="res://spawner/wave.tscn" id="6_hedsn"]
 [ext_resource type="Texture2D" uid="uid://c1ltyrwgtsscv" path="res://map/level_1/TilesetGrass/map1.png" id="6_pxk0l"]
-[ext_resource type="PackedScene" uid="uid://dn233gw24l14r" path="res://tower/bullet.tscn" id="6_t3x52"]
+[ext_resource type="PackedScene" uid="uid://c3igvud5md3g2" path="res://tower/bullet.tscn" id="6_t3x52"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jukju"]
 texture = ExtResource("6_pxk0l")
@@ -79,6 +80,8 @@ sources/0 = SubResource("TileSetAtlasSource_jukju")
 
 [node name="Main" type="Node2D"]
 
+[node name="playscreen" parent="." instance=ExtResource("1_7026l")]
+
 [node name="Background" type="TileMap" parent="."]
 position = Vector2(48, 48)
 scale = Vector2(6, 6)
@@ -90,6 +93,7 @@ layer_0/tile_data = PackedInt32Array(327680, 917504, 17, 327681, 917504, 17, 327
 script = ExtResource("1_ic3rl")
 
 [node name="TowerUI" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enabled = true
 
 [node name="Panel" type="Panel" parent="TowerUI"]
