@@ -15,8 +15,9 @@ func update():
 		
 		var tower = Global.get_tower(i)
 		if tower == null:
-			continue
-			
-		if child is TextureButton:
-			child.texture_normal = Global.get_tower_img(tower['name'])
-			child.get_node('./Label').text = str(tower['amount'])
+			child.texture_normal = null
+			child.get_node('./Label').text = ''
+		else:
+			if child is TextureButton:
+				child.texture_normal = Global.get_tower_img(tower['name'])
+				child.get_node('./Label').text = str(tower['amount'])

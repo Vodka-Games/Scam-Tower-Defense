@@ -7,6 +7,7 @@ var towers = []
 var tower_dict = {}
 
 var tower_display = null
+var spawner = null
 
 func set_tower_display(obj):
 	tower_display = obj
@@ -87,21 +88,27 @@ func get_tower_scene(name):
 func get_tower_img(name):
 	return tower_dict[name]['img']
 	
-func set_count_enemies(amount):
+func set_count_enemies(amount, spawner):
 	count_enemies = amount
+	
+	self.spawner = spawner
 	
 func decrease_enemies():
 	count_enemies -= 1
 	assert(count_enemies >= 0)
+	
+	if count_enemies == 0:
+		spawner.emit_signal("end_phase")
 	
 func get_count_enemies():
 	return count_enemies
 	
 func install_tower(tower_name):
 	for i in towers.size():
-		var tower = towers[i]
-		if tower['name'] == tower_name:
-			tower['amount'] -= 1
+		if  towers[i]['name'] == tower_name:
+			towers[i]['amount'] -= 1
 			
-			if tower['amount'] == 0:
+			if towers[i]['amount'] == 0:
 				towers.pop_at(i)
+				
+	update_display()

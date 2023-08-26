@@ -1,13 +1,19 @@
 extends Node2D
 
+signal end_phase
+
 var path
 var waves = []
 var cur_w
 
 func start_phase():
 	var count = get_count_enemies()
-	Global.set_count_enemies(count)
+	Global.set_count_enemies(count, self)
 	start_spawn(path)
+	
+func _on_end_phase():
+	%UI_store.show()
+
 
 func get_count_enemies():
 	var enemies = find_children("*","Area2D", true)
@@ -37,3 +43,6 @@ func _on_phase_timer_timeout():
 	
 func finish_phase():
 	$PhaseTimer.stop()
+
+
+
