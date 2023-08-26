@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=9 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="PackedScene" uid="uid://emsjesr7jd4j" path="res://tower/basic_tower.tscn" id="1_8fkri"]
 [ext_resource type="Texture2D" uid="uid://dmftt8lyryysr" path="res://icon.svg" id="1_caopj"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
 [ext_resource type="PackedScene" uid="uid://cnxkmwfybdk8a" path="res://map/lv_1_path.tscn" id="3_o8hi5"]
+[ext_resource type="Script" path="res://Spawner.gd" id="5_qh5a0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_024ss"]
 texture = ExtResource("1_caopj")
@@ -34,16 +35,17 @@ offset_left = -200.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="EnemySpawner" type="Node2D" parent="."]
+[node name="Lv1_Path" parent="." instance=ExtResource("3_o8hi5")]
 
-[node name="LvPath" parent="EnemySpawner" instance=ExtResource("3_o8hi5")]
-
-[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner/LvPath"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Lv1_Path"]
 position = Vector2(5, 528)
 rotation = 0.00793634
 
-[node name="BasicEnemy" parent="EnemySpawner/LvPath/PathFollow2D" instance=ExtResource("3_0jexe")]
+[node name="BasicEnemy" parent="Lv1_Path/PathFollow2D" instance=ExtResource("3_0jexe")]
 rotation = -0.00793634
+
+[node name="Spawner" type="Node2D" parent="Lv1_Path"]
+script = ExtResource("5_qh5a0")
 
 [node name="TileMap" type="TileMap" parent="."]
 visible = false

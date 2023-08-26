@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ok2icsy37jau"]
+[gd_scene load_steps=4 format=3 uid="uid://ok2icsy37jau"]
 
-[ext_resource type="Texture2D" uid="uid://nhnsmi6iyq4o" path="res://enemy/basic_fraud.png" id="1_xiwwu"]
+[ext_resource type="Script" path="res://enemy/basic_enemy.gd" id="1_pmjpf"]
+[ext_resource type="Texture2D" uid="uid://cbb6vqf1ewriv" path="res://enemy/plate_basic.png" id="1_xpo3f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qxmd"]
 radius = 64.0
 
 [node name="BasicEnemy" type="Area2D"]
+script = ExtResource("1_pmjpf")
+speed = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8qxmd")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_xiwwu")
+texture = ExtResource("1_xpo3f")
