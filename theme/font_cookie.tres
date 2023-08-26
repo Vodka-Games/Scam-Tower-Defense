@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cooroq3xx8o5g"]
+
+[ext_resource type="FontFile" uid="uid://debh3d7ny3xpl" path="res://theme/CookieRun Regular.ttf" id="1_x0pc7"]
+
+[resource]
+base_font = ExtResource("1_x0pc7")
+spacing_glyph = 20
