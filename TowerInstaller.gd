@@ -21,5 +21,4 @@ func install_tower(obj):
 
 func _on_ui_ingame_click_tower_item(idx):
 	var tower = Global.get_tower(idx)
-	print(idx)
 #	pick_tower(event.global_position, tower)
