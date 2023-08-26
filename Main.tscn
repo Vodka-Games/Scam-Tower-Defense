@@ -1823,13 +1823,17 @@ offset_top = 294.0
 offset_right = 1773.0
 offset_bottom = 376.0
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="UI/UI_store"]
+offset_left = 1312.0
+offset_top = 744.0
+offset_right = 1688.0
+offset_bottom = 896.0
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_h3wo4")
 autoplay = true
 
 [connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
-[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/UI_store/StartButton" to="." method="_on_start_pressed"]
 
 [editable path="UI/UI_ingame"]
