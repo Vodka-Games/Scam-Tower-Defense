@@ -56,7 +56,6 @@ func buy_tower(tower_name, amount):
 	if not ret:
 		return false
 	
-
 	for tower in towers:
 		if tower['name'] == tower_name:
 			tower['amount'] += 1
@@ -98,5 +97,11 @@ func decrease_enemies():
 func get_count_enemies():
 	return count_enemies
 	
-#func install_tower(name):
-#	towers
+func install_tower(tower_name):
+	for i in towers.size():
+		var tower = towers[i]
+		if tower['name'] == tower_name:
+			tower['amount'] -= 1
+			
+			if tower['amount'] == 0:
+				towers.pop_at(i)

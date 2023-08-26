@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://3mjgfjws3uom"]
+[gd_scene load_steps=9 format=3 uid="uid://3mjgfjws3uom"]
 
 [ext_resource type="Script" path="res://theme/ui_ingame.gd" id="1_u0b3c"]
-[ext_resource type="FontVariation" uid="uid://cooroq3xx8o5g" path="res://theme/font_cookie.tres" id="2_ffl6u"]
+[ext_resource type="FontVariation" path="res://theme/font_cookie.tres" id="2_ffl6u"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="2_nxh5u"]
+[ext_resource type="Script" path="res://theme/ItemboxOutline.gd" id="3_foqv5"]
 [ext_resource type="Texture2D" uid="uid://c8bh4obxi7avf" path="res://theme/pauseicon.webp" id="3_m7isl"]
 [ext_resource type="Texture2D" uid="uid://dp2ix0522o188" path="res://theme/icon_store.png" id="4_38o13"]
 [ext_resource type="FontFile" uid="uid://debh3d7ny3xpl" path="res://theme/CookieRun Regular.ttf" id="6_qwmg3"]
@@ -68,6 +69,7 @@ text = "00:00"
 horizontal_alignment = 1
 
 [node name="ItemboxOutline" type="TextureRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -81,8 +83,9 @@ offset_bottom = -81.9999
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.4, 1.4)
+script = ExtResource("3_foqv5")
 
-[node name="Button" type="Button" parent="ItemboxOutline"]
+[node name="Button" type="TextureButton" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -96,7 +99,12 @@ offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button2" type="Button" parent="ItemboxOutline"]
+[node name="Label" type="Label" parent="ItemboxOutline/Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button2" type="TextureButton" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -110,7 +118,12 @@ offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button3" type="Button" parent="ItemboxOutline"]
+[node name="Label" type="Label" parent="ItemboxOutline/Button2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button3" type="TextureButton" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -124,7 +137,12 @@ offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button4" type="Button" parent="ItemboxOutline"]
+[node name="Label" type="Label" parent="ItemboxOutline/Button3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button4" type="TextureButton" parent="ItemboxOutline"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -137,6 +155,11 @@ offset_right = 188.5
 offset_bottom = -29.7144
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Label" type="Label" parent="ItemboxOutline/Button4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Pause_Button" type="Button" parent="."]
 layout_mode = 1
