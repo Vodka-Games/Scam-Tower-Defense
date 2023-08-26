@@ -3,7 +3,7 @@ extends Area2D
 var tile_size = 96
 
 @export var range:int
-@export var attack_gap: int
+@export var attack_gap: float
 
 var is_floating = false
 var is_install = false
@@ -22,7 +22,6 @@ func _ready():
 	$Range.shape.radius = range * tile_size
 	$AttackTimer.wait_time = attack_gap
 	
-	print($Range.shape.radius)
 	
 func install():
 	is_floating = false
