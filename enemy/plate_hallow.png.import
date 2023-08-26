@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbb6vqf1ewriv"
-path="res://.godot/imported/plate_big.png-cce099dd2273b15fe65db3070c787419.ctex"
+uid="uid://huew1cc5aj8s"
+path="res://.godot/imported/plate_hallow.png-dee389d02fce9dbcda87d55c6c777b25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/plate_big.png"
-dest_files=["res://.godot/imported/plate_big.png-cce099dd2273b15fe65db3070c787419.ctex"]
+source_file="res://enemy/plate_hallow.png"
+dest_files=["res://.godot/imported/plate_hallow.png-dee389d02fce9dbcda87d55c6c777b25.ctex"]
 
 [params]
 
