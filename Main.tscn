@@ -1,18 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=11 format=3 uid="uid://dxnf3klxl5wf1"]
 
-[ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
-[ext_resource type="PackedScene" uid="uid://bnawv06qxvttv" path="res://spawner/follwer.tscn" id="4_g8hf7"]
-[ext_resource type="PackedScene" uid="uid://bt51p6kp2jaoa" path="res://spawner/spawner.tscn" id="5_kp1d7"]
-[ext_resource type="PackedScene" uid="uid://dkjf8qbsohc72" path="res://spawner/wave.tscn" id="6_hedsn"]
-[ext_resource type="PackedScene" uid="uid://dn233gw24l14r" path="res://tower/bullet.tscn" id="6_t3x52"]
-[ext_resource type="Script" path="res://Wave.gd" id="6_xlmlm"]
-[ext_resource type="PackedScene" uid="uid://emsjesr7jd4j" path="res://tower/basic_tower.tscn" id="1_8fkri"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="3_0jexe"]
 [ext_resource type="PackedScene" uid="uid://cnxkmwfybdk8a" path="res://map/lv_1_path.tscn" id="3_o8hi5"]
-[ext_resource type="Script" path="res://Spawner.gd" id="5_qh5a0"]
+[ext_resource type="PackedScene" uid="uid://bnawv06qxvttv" path="res://spawner/follwer.tscn" id="4_g8hf7"]
+[ext_resource type="PackedScene" uid="uid://bt51p6kp2jaoa" path="res://spawner/spawner.tscn" id="5_kp1d7"]
+[ext_resource type="PackedScene" uid="uid://dkjf8qbsohc72" path="res://spawner/wave.tscn" id="6_hedsn"]
 [ext_resource type="Texture2D" uid="uid://c1ltyrwgtsscv" path="res://map/level_1/TilesetGrass/map1.png" id="6_pxk0l"]
-[ext_resource type="PackedScene" path="res://tower/bullet.tscn" id="6_t3x52"]
+[ext_resource type="PackedScene" uid="uid://dn233gw24l14r" path="res://tower/bullet.tscn" id="6_t3x52"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jukju"]
 texture = ExtResource("6_pxk0l")
@@ -114,35 +109,13 @@ position = Vector2(48, 48)
 [node name="Spawner" parent="Lv1_Path" instance=ExtResource("5_kp1d7")]
 
 [node name="Wave" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
-wait = 4.0
+gap = 5.0
 
 [node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
 [node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
 [node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy4" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy5" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
-
-[node name="Wave2" type="Node2D" parent="Lv1_Path/Spawner"]
-script = ExtResource("6_xlmlm")
-gap = 0.5
-wait = 4.0
-
-[node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
-
-[node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave2" instance=ExtResource("3_0jexe")]
-
-[node name="Wave3" type="Node2D" parent="Lv1_Path/Spawner"]
-script = ExtResource("6_xlmlm")
-gap = 0.5
-wait = 4.0
-
-[node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave3" instance=ExtResource("3_0jexe")]
 
 [node name="Bullet" parent="." instance=ExtResource("6_t3x52")]
 

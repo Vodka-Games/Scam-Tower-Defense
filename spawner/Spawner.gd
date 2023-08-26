@@ -2,15 +2,30 @@ extends Node2D
 
 var path
 var waves = []
-var cur_idx = 0
+var cur_w
 
 func _ready():
-	for c in get_children():
-			waves.append(c)
+	for w in get_children():
+		if not w is Timer:
+			waves.append(w)
+			
 	path = get_parent()
 	start_spawn(path)
 	
 func start_spawn(p):
-	for w in waves:
-		w.spawn_wave(p)
-		await get_tree().create_timer(w.wait).timeout
+	if not waves.is_empty():
+		cur_w = waves.pop_front()
+		cur_w.start(p)
+		
+func end_wave_spawn():
+	$PhaseTimer.wait_time = cur_w.wait
+	$PhaseTimer.start()
+	
+func end_wave_timer():
+	start_spawn(path)
+
+func _on_phase_timer_timeout():
+	end_wave_timer()
+	
+func finish_phase():
+	$PhaseTimer.stop()

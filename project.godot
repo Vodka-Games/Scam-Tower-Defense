@@ -32,3 +32,7 @@ project/assembly_name="Scam-Tower-Defense"
 
 theme/custom="res://theme/maintheme.tres"
 theme/custom_font="res://theme/DungGeunMo.ttf"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
