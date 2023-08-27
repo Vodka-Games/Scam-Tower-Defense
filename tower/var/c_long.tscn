@@ -20,4 +20,3 @@ texture = ExtResource("3_nookv")
 script = ExtResource("4_iwvba")
 
 [connection signal="timeout" from="AttackTimer" to="AttackTimer" method="_on_timeout"]
-[connection signal="damage" from="HitBox" to="." method="damage" flags=18]

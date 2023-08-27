@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dmaukoretjy2r" path="res://tower/basic_tower.tscn" id="1_2hjup"]
 [ext_resource type="Texture2D" uid="uid://c3kp7fkwg0336" path="res://tower/b_cannon.png" id="2_ins35"]
 
-[node name="Tower2" instance=ExtResource("1_2hjup")]
+[node name="Tower3" instance=ExtResource("1_2hjup")]
 attack_gap = 3.0
 max_hp = 20
 
