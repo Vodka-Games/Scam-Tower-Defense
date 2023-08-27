@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://b23uwx2dy8xm" path="res://music/Pendulab BGM.mp3" id="12_h3wo4"]
 [ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="13_11io6"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="14_jxntt"]
-[ext_resource type="FontVariation" uid="uid://cooroq3xx8o5g" path="res://theme/font_cookie.tres" id="16_6jrpr"]
+[ext_resource type="FontVariation" path="res://theme/font_cookie.tres" id="16_6jrpr"]
 [ext_resource type="Script" path="res://cost_display.gd" id="16_gf8qc"]
 [ext_resource type="PackedScene" uid="uid://gl3q278dlrbb" path="res://store/BuyCard.tscn" id="16_infs8"]
 [ext_resource type="Texture2D" uid="uid://b88u66c7vcflg" path="res://store/Untitled34 (1).png" id="17_mbjib"]
@@ -1748,7 +1748,7 @@ text = "마법사의 스탠다드한 기본 포탑"
 
 [node name="ACannon" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 100
 tower_name = "a_cannon"
 
 [node name="AShield" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
@@ -1758,7 +1758,7 @@ tower_name = "a_shield"
 
 [node name="ALong" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 200
 tower_name = "a_long"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI/UI_store/Merchandise/VBoxContainer"]
@@ -1779,17 +1779,17 @@ text = "궁수의 arrow틱한 포탑"
 
 [node name="BCannon" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 50
 tower_name = "b_cannon"
 
 [node name="BShield" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 50
 tower_name = "b_shield"
 
 [node name="BLong" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 200
 tower_name = "b_long"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/UI_store/Merchandise/VBoxContainer"]
@@ -1810,17 +1810,17 @@ text = "주부의 농염한 포탑"
 
 [node name="CCannon" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 220
 tower_name = "c_cannon"
 
 [node name="CShield" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 180
 tower_name = "c_shield"
 
 [node name="CLong" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2" instance=ExtResource("16_infs8")]
 layout_mode = 2
-cost = 120
+cost = 200
 tower_name = "c_long"
 
 [node name="Panel" type="Panel" parent="UI/UI_store/Merchandise"]
