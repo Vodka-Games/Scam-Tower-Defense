@@ -43,12 +43,16 @@ func gameover():
 	main.emit_signal("gameover")
 
 func damage(d):
+	if hp <= 0:
+		return
+		
 	hp -= d
 	
 	if hp <= 0:
-		$AnimationPlayer.play("break")
-		follower.queue_free()
 		Global.decrease_enemies()
+		$AnimationPlayer.play("break")
+		await $AnimationPlayer.animation_finished
+		follower.queue_free()
 		# TODO: change to broken image
 
 func attack_target():
