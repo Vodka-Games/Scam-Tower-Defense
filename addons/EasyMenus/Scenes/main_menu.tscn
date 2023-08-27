@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dq6tvhqcy2aps"]
+[gd_scene load_steps=16 format=3 uid="uid://dq6tvhqcy2aps"]
 
 [ext_resource type="Script" path="res://addons/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
 [ext_resource type="Texture2D" uid="uid://dbi2ckfcscs38" path="res://theme/[피지컬게임] 사기도박에 당한 사령관.png" id="2_1i0tu"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://huew1cc5aj8s" path="res://enemy/plate_hallow.png" id="9_3h5ne"]
 [ext_resource type="Texture2D" uid="uid://txgyhj5b3sn4" path="res://tower/tower_2_atlas.png" id="10_jrnqc"]
 [ext_resource type="Texture2D" uid="uid://djlv814ybsl3s" path="res://enemy/Untitled39 (2).png" id="13_flsdm"]
+[ext_resource type="AudioStream" uid="uid://cbqmqqg7in20q" path="res://music/main_bgm1.mp3" id="15_k2qey"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -205,6 +206,11 @@ text = "사기 타워 디펜스 -
 마법사에 의해 사악한 마법이 깃든 도자기가 마을로 마구 굴러오기 시작했습니다. 도자기가 마을을 파괴하기 전에 타워를 설치해서 도자기를 부숴 보세요! 하지만 상인들을 너무 믿지 마세요, 그들은 사실 사기꾼일지도 모릅니다..."
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_k2qey")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Content/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Content/OptionsButton" to="." method="open_options"]

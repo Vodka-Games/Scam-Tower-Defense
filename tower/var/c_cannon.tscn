@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://txgyhj5b3sn4" path="res://tower/tower_2_atlas.png" id="2_5jjat"]
 [ext_resource type="Texture2D" uid="uid://dubiprjfq6vla" path="res://tower/c_cannon.png" id="2_vug0j"]
 
-[node name="Tower" instance=ExtResource("1_15gp8")]
+[node name="Tower2" instance=ExtResource("1_15gp8")]
 attack_gap = 0.333
 max_hp = 7
 
