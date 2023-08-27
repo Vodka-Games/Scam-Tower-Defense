@@ -27,7 +27,10 @@ func _physics_process(delta):
 	
 func _ready():
 	is_floating = true
-	$Range.shape.radius = range * tile_size
+	var circle_shape = CircleShape2D.new()
+	circle_shape.radius = range * tile_size
+	
+	$Range.shape = circle_shape
 	$AttackTimer.wait_time = attack_gap
 	hp = max_hp
 	

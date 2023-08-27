@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ok2icsy37jau"]
+[gd_scene load_steps=8 format=3 uid="uid://ok2icsy37jau"]
 
 [ext_resource type="Script" path="res://enemy/basic_enemy.gd" id="1_pmjpf"]
-[ext_resource type="Texture2D" uid="uid://cbb6vqf1ewriv" path="res://enemy/plate_basic.png" id="1_xpo3f"]
+[ext_resource type="Texture2D" uid="uid://bw6hcv1r1813m" path="res://enemy/plate_normal_atlas.png" id="2_b2v3j"]
 [ext_resource type="Animation" uid="uid://bnojof4um17og" path="res://enemy/idle.res" id="3_n7tph"]
+[ext_resource type="Animation" path="res://enemy/break.res" id="4_min38"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qxmd"]
 radius = 32.0
@@ -49,6 +50,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b7lb0"]
 _data = {
 "RESET": SubResource("Animation_4d8cm"),
+"break": ExtResource("4_min38"),
 "idle": ExtResource("3_n7tph")
 }
 
@@ -62,7 +64,9 @@ max_hp = 20
 shape = SubResource("CircleShape2D_8qxmd")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_xpo3f")
+position = Vector2(0, 7.315)
+texture = ExtResource("2_b2v3j")
+hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"

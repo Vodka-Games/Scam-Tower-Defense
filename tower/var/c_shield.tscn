@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://kvf0p081t305"]
 
 [ext_resource type="PackedScene" uid="uid://dmaukoretjy2r" path="res://tower/basic_tower.tscn" id="1_hix5c"]
-[ext_resource type="Texture2D" uid="uid://cdljkevj76dam" path="res://tower/shield.png" id="2_ugeny"]
+[ext_resource type="Texture2D" uid="uid://dwiwh347da85f" path="res://tower/c_shield.png" id="2_qhbr4"]
 
 [node name="Tower" instance=ExtResource("1_hix5c")]
 range = 2
 max_hp = 20
 
 [node name="Cannon" parent="Control" index="0"]
-texture = ExtResource("2_ugeny")
+texture = ExtResource("2_qhbr4")
