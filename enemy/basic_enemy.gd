@@ -23,7 +23,7 @@ func _ready():
 func _physics_process(delta):
 	if not follower is PathFollow2D:
 		return
-	if follower.progress_ratio > 0.1:
+	if follower.progress_ratio > 0.95:
 		gameover()
 		
 	follower.progress += delta * speed

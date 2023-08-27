@@ -3,6 +3,9 @@ extends Node2D
 var is_picking = false
 var tower_name
 
+func init():
+	is_picking = false
+
 func pick_tower(pos, tower):
 	if is_picking:
 		return
@@ -14,10 +17,9 @@ func pick_tower(pos, tower):
 	
 	temp_tower.put_on_tile(pos)
 	
-func install_tower(obj):
+func install_tower(obj, pos):
 	self.is_picking = false
-	print(tower_name)
-	Global.install_tower(tower_name)
+	Global.install_tower(tower_name, pos)
 
 func _on_ui_ingame_click_tower_item(idx):
 	var tower = Global.get_tower(idx)

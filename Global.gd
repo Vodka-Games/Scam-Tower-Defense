@@ -5,6 +5,7 @@ var count_enemies = 0
 
 var towers = []
 var tower_dict = {}
+var installed_tiles = []
 
 var tower_display = null
 var spawner = null
@@ -103,7 +104,7 @@ func decrease_enemies():
 func get_count_enemies():
 	return count_enemies
 	
-func install_tower(tower_name):
+func install_tower(tower_name, pos):
 	for i in towers.size():
 		if  towers[i]['name'] == tower_name:
 			towers[i]['amount'] -= 1
@@ -111,4 +112,10 @@ func install_tower(tower_name):
 			if towers[i]['amount'] == 0:
 				towers.pop_at(i)
 				
+	var b_pos = floor(pos / 96)
+	installed_tiles.append(b_pos)
+	print(installed_tiles)
 	update_display()
+	
+func get_installed_tiles():
+	return installed_tiles

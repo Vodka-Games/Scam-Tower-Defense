@@ -27,9 +27,14 @@ func _ready():
 	$AttackTimer.wait_time = attack_gap
 	
 func install():
+	var g_pos = floor(self.global_position / 96)
+	if g_pos in Global.get_installed_tiles():
+		print('asdf')
+		return
+	
 	is_floating = false
 	is_install = true
-	get_parent().install_tower(self)
+	get_parent().install_tower(self, self.global_position)
 	$AttackTimer.start()
 
 func put_on_tile(pos):
