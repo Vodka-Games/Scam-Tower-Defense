@@ -5,7 +5,7 @@
 [ext_resource type="Animation" uid="uid://bnojof4um17og" path="res://enemy/idle.res" id="3_n7tph"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qxmd"]
-radius = 48.0
+radius = 32.0
 
 [sub_resource type="Animation" id="Animation_4d8cm"]
 length = 0.001
@@ -53,6 +53,7 @@ _data = {
 }
 
 [node name="BasicEnemy" type="Area2D"]
+collision_mask = 8
 script = ExtResource("1_pmjpf")
 speed = 96
 max_hp = 20
@@ -68,3 +69,9 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_b7lb0")
 }
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

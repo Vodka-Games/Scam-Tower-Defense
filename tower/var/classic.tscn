@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmaukoretjy2r"]
+[gd_scene load_steps=9 format=3 uid="uid://dmaukoretjy2r"]
 
 [ext_resource type="Script" path="res://tower/Tower.gd" id="1_t25bx"]
 [ext_resource type="Texture2D" uid="uid://cexl0avygyym0" path="res://tower/cannon.png" id="2_viofc"]
@@ -45,6 +45,9 @@ _data = {
 "shoot": SubResource("Animation_ngeyi")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfgqi"]
+size = Vector2(32, 96)
+
 [node name="Tower" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_t25bx")
@@ -78,6 +81,13 @@ shape = SubResource("CircleShape2D_rj55e")
 libraries = {
 "": SubResource("AnimationLibrary_wg728")
 }
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_jfgqi")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

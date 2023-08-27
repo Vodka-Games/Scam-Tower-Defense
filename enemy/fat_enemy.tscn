@@ -1,70 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://v7hqg6dcw1o4"]
+[gd_scene load_steps=3 format=3 uid="uid://v7hqg6dcw1o4"]
 
-[ext_resource type="Script" path="res://enemy/basic_enemy.gd" id="1_47te1"]
+[ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="1_6b3wi"]
 [ext_resource type="Texture2D" uid="uid://3x17y3wcmw7v" path="res://enemy/plate_fat.png" id="2_khr3e"]
-[ext_resource type="Animation" uid="uid://bnojof4um17og" path="res://enemy/idle.res" id="3_t1i2c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8qxmd"]
-radius = 48.0
+[node name="FatEnemy" instance=ExtResource("1_6b3wi")]
+speed = 48
+max_hp = 40
 
-[sub_resource type="Animation" id="Animation_4d8cm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:skew")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b7lb0"]
-_data = {
-"RESET": SubResource("Animation_4d8cm"),
-"idle": ExtResource("3_t1i2c")
-}
-
-[node name="FatEnemy" type="Area2D"]
-script = ExtResource("1_47te1")
-speed = 144
-max_hp = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8qxmd")
-
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" parent="." index="1"]
 texture = ExtResource("2_khr3e")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-libraries = {
-"": SubResource("AnimationLibrary_b7lb0")
-}

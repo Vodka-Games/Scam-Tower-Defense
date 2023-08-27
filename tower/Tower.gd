@@ -9,6 +9,7 @@ var is_floating = false
 var is_install = false
 
 var enemies_in_range = {}
+var tower_name
 
 var target = null
 
@@ -33,7 +34,7 @@ func install():
 	
 	is_floating = false
 	is_install = true
-	get_parent().install_tower(self, self.global_position)
+	get_parent().install_tower(tower_name,self.global_position)
 	$AttackTimer.start()
 
 func put_on_tile(pos):
@@ -109,4 +110,3 @@ func _on_area_exited(area):
 
 func _on_attack_timer_timeout():
 	attack_target()
-

@@ -1,70 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vfanud2srnkd"]
+[gd_scene load_steps=3 format=3 uid="uid://vfanud2srnkd"]
 
-[ext_resource type="Script" path="res://enemy/basic_enemy.gd" id="1_uhwmx"]
-[ext_resource type="Texture2D" uid="uid://cbb6vqf1ewriv" path="res://enemy/plate_basic.png" id="2_4dx0d"]
-[ext_resource type="Animation" uid="uid://bnojof4um17og" path="res://enemy/idle.res" id="3_4ukgt"]
+[ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="1_dna2v"]
+[ext_resource type="Texture2D" uid="uid://huew1cc5aj8s" path="res://enemy/plate_hallow.png" id="2_lln34"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8qxmd"]
-radius = 48.0
+[node name="HallowEnemy" instance=ExtResource("1_dna2v")]
 
-[sub_resource type="Animation" id="Animation_4d8cm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:skew")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b7lb0"]
-_data = {
-"RESET": SubResource("Animation_4d8cm"),
-"idle": ExtResource("3_4ukgt")
-}
-
-[node name="HallowEnemy" type="Area2D"]
-script = ExtResource("1_uhwmx")
-speed = 96
-max_hp = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8qxmd")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_4dx0d")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-libraries = {
-"": SubResource("AnimationLibrary_b7lb0")
-}
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_lln34")

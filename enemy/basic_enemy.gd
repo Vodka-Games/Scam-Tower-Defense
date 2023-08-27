@@ -9,6 +9,9 @@ var hp:int
 var id: int
 var rng = RandomNumberGenerator.new()
 
+var is_blocking = false
+var target = null
+
 func _ready():
 	var parent = get_parent()
 	
@@ -21,8 +24,12 @@ func _ready():
 	hide()
 
 func _physics_process(delta):
+	if is_blocking:
+		return
+		
 	if not follower is PathFollow2D:
 		return
+		
 	if follower.progress_ratio > 0.95:
 		gameover()
 		
@@ -41,3 +48,21 @@ func damage(d):
 	if hp <= 0:
 		follower.queue_free()
 		Global.decrease_enemies()
+		# TODO: change to broken image
+
+func attack_target():
+	pass
+
+
+func _on_area_entered(area):
+	if area.name == "HitBox":
+		is_blocking = true
+		$AttackTimer.start()
+
+func _on_area_exited(area):
+	if area.name == "HitBox":
+		is_blocking = false
+
+
+func _on_attack_timer_timeout():
+	attack_target()
