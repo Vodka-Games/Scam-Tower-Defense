@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://vfanud2srnkd"]
 
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="1_dna2v"]
-[ext_resource type="Texture2D" uid="uid://huew1cc5aj8s" path="res://enemy/plate_hallow.png" id="2_lln34"]
+[ext_resource type="Texture2D" uid="uid://n6emhp8i01vv" path="res://enemy/plate_hallow_atlas.png" id="2_nwpj3"]
 
 [node name="HallowEnemy" instance=ExtResource("1_dna2v")]
 
 [node name="Sprite" parent="." index="1"]
-texture = ExtResource("2_lln34")
+texture = ExtResource("2_nwpj3")

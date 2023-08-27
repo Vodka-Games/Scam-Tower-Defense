@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://v7hqg6dcw1o4"]
 
 [ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="1_6b3wi"]
-[ext_resource type="Texture2D" uid="uid://3x17y3wcmw7v" path="res://enemy/plate_fat.png" id="2_khr3e"]
+[ext_resource type="Texture2D" uid="uid://bialtipvteym4" path="res://enemy/plate_fat_atlas.png" id="2_qli8j"]
 
 [node name="FatEnemy" instance=ExtResource("1_6b3wi")]
 speed = 48
 max_hp = 40
 
 [node name="Sprite" parent="." index="1"]
-texture = ExtResource("2_khr3e")
+texture = ExtResource("2_qli8j")

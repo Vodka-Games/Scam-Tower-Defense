@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=27 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5sqsl"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
@@ -12,13 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://c1ltyrwgtsscv" path="res://map/level_1/TilesetGrass/map1.png" id="6_pxk0l"]
 [ext_resource type="PackedScene" uid="uid://3mjgfjws3uom" path="res://theme/ui_ingame.tscn" id="9_uwln7"]
 [ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://addons/EasyMenus/Scenes/pause_menu.tscn" id="10_rpo5k"]
-[ext_resource type="PackedScene" path="res://enemy/fat_enemy.tscn" id="11_6ac8t"]
+[ext_resource type="PackedScene" uid="uid://v7hqg6dcw1o4" path="res://enemy/fat_enemy.tscn" id="11_6ac8t"]
 [ext_resource type="AudioStream" uid="uid://b23uwx2dy8xm" path="res://music/Pendulab BGM.mp3" id="12_h3wo4"]
 [ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="13_11io6"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="14_jxntt"]
 [ext_resource type="FontVariation" uid="uid://cooroq3xx8o5g" path="res://theme/font_cookie.tres" id="16_6jrpr"]
 [ext_resource type="Script" path="res://cost_display.gd" id="16_gf8qc"]
 [ext_resource type="PackedScene" uid="uid://gl3q278dlrbb" path="res://store/BuyCard.tscn" id="16_infs8"]
+[ext_resource type="Texture2D" uid="uid://b88u66c7vcflg" path="res://store/Untitled34 (1).png" id="17_mbjib"]
+[ext_resource type="Texture2D" uid="uid://b4gs6mhwm4iqf" path="res://store/Untitled34.png" id="18_ha0i7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jukju"]
 texture = ExtResource("6_pxk0l")
@@ -1739,7 +1741,7 @@ theme = ExtResource("14_jxntt")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "asdfasdfasdfasdfasdfasdf"
+text = "마법사의 스탠다드한 기본 포탑"
 
 [node name="Panel" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
 layout_mode = 2
@@ -1751,7 +1753,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-texture = ExtResource("13_11io6")
+texture = ExtResource("17_mbjib")
 
 [node name="Label" type="Label" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
@@ -1759,14 +1761,14 @@ theme = ExtResource("14_jxntt")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "asdfasdfasdfasdfasdfasdf"
+text = "궁수의 즉발적인 포탑"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/UI_store/Merchandise/VBoxContainer"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-texture = ExtResource("13_11io6")
+texture = ExtResource("18_ha0i7")
 
 [node name="Label" type="Label" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -1774,7 +1776,7 @@ theme = ExtResource("14_jxntt")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "asdfasdfasdfasdfasdfasdf"
+text = "주부의 농염한 포탑"
 
 [node name="Panel" type="Panel" parent="UI/UI_store/Merchandise"]
 layout_mode = 1
