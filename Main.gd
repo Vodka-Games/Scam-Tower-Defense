@@ -21,3 +21,8 @@ func _on_start_pressed():
 	
 func _on_gameover():
 	$%GameOver.show()
+
+
+func _on_pause_menu_back_to_main_pressed():
+	get_tree().change_scene_to_file("res://addons/EasyMenus/Scenes/main_menu.tscn")
+	pass # Replace with function body.

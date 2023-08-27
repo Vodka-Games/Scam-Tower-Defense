@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq6tvhqcy2aps"]
+[gd_scene load_steps=14 format=3 uid="uid://dq6tvhqcy2aps"]
 
 [ext_resource type="Script" path="res://addons/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
 [ext_resource type="PackedScene" uid="uid://qlskttl1wjr7" path="res://addons/EasyMenus/Scenes/options_menu.tscn" id="2_pwqpr"]
+[ext_resource type="Texture2D" uid="uid://cbib47gfa3i14" path="res://tower/tower_1_atlas.png" id="3_0qtbh"]
+[ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="3_3gf2d"]
+[ext_resource type="FontFile" uid="uid://debh3d7ny3xpl" path="res://theme/CookieRun Regular.ttf" id="4_02wjo"]
+[ext_resource type="Texture2D" uid="uid://bto88o235qmm" path="res://enemy/Untitled48 (1).png" id="4_08673"]
+[ext_resource type="Texture2D" uid="uid://dq8cxiur40qe8" path="res://tower/var/tower_3_atlas.png" id="5_80jgr"]
+[ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="6_fa4fm"]
+[ext_resource type="Texture2D" uid="uid://b88u66c7vcflg" path="res://store/Untitled34 (1).png" id="7_hit1f"]
+[ext_resource type="Texture2D" uid="uid://b4gs6mhwm4iqf" path="res://store/Untitled34.png" id="8_jo27c"]
+[ext_resource type="Texture2D" uid="uid://huew1cc5aj8s" path="res://enemy/plate_hallow.png" id="9_3h5ne"]
+[ext_resource type="Texture2D" uid="uid://txgyhj5b3sn4" path="res://tower/tower_2_atlas.png" id="10_jrnqc"]
+[ext_resource type="Texture2D" uid="uid://djlv814ybsl3s" path="res://enemy/Untitled39 (2).png" id="13_flsdm"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,7 +40,7 @@ metadata/_edit_group_ = true
 [node name="Title" type="Label" parent="Content"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
-text = "Game Title"
+text = "Sagi Tower defense"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="Content"]
@@ -79,7 +90,7 @@ focus_neighbor_bottom = NodePath("../StartGameButton")
 focus_next = NodePath("../StartGameButton")
 focus_previous = NodePath("../OptionsButton")
 theme_override_font_sizes/font_size = 30
-text = "Tutorial"
+text = "How to play"
 
 [node name="OptionsMenu" parent="." instance=ExtResource("2_pwqpr")]
 visible = false
@@ -103,6 +114,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Untitled39(2)" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(1661, 352)
+texture = ExtResource("13_flsdm")
+
+[node name="Tower1Atlas" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(1355, 313)
+texture = ExtResource("3_0qtbh")
+
+[node name="Untitled48(1)" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(612, 493)
+texture = ExtResource("4_08673")
+
+[node name="Tower3Atlas" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(1355, 493)
+texture = ExtResource("5_80jgr")
+
+[node name="Girl" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(435, 412)
+texture = ExtResource("6_fa4fm")
+
+[node name="Untitled34(1)" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(387, 415)
+texture = ExtResource("7_hit1f")
+
+[node name="Untitled34" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(345, 430)
+texture = ExtResource("8_jo27c")
+
+[node name="PlateHallow" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(504, 316)
+texture = ExtResource("9_3h5ne")
+
+[node name="Tower2Atlas" type="Sprite2D" parent="TutorialMenu/Panel"]
+position = Vector2(1598, 487)
+texture = ExtResource("10_jrnqc")
+
 [node name="tutorial_close" type="Button" parent="TutorialMenu"]
 layout_mode = 1
 anchors_preset = 1
@@ -113,6 +160,27 @@ offset_top = 35.0
 offset_right = -34.0
 offset_bottom = 130.0
 grow_horizontal = 0
+theme_override_font_sizes/font_size = 96
+text = "X"
+
+[node name="Label" type="Label" parent="TutorialMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 277.0
+offset_top = 512.0
+offset_right = -277.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3gf2d")
+theme_override_fonts/font = ExtResource("4_02wjo")
+theme_override_font_sizes/font_size = 60
+text = "사기 타워 디펜스 -
+마법사에 의해 사악한 마법이 깃든 도자기가 마을로 마구 굴러오기 시작했습니다. 도자기가 마을을 파괴하기 전에 타워를 설치해서 도자기를 부숴 보세요! 하지만 상인들을 너무 믿지 마세요, 그들은 사실 사기꾼일지도 모릅니다..."
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="Content/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Content/OptionsButton" to="." method="open_options"]

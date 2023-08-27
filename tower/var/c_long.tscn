@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dmaukoretjy2r" path="res://tower/basic_tower.tscn" id="1_n4d7k"]
 [ext_resource type="Texture2D" uid="uid://beqcg3nt6ddlu" path="res://tower/c_long.png" id="2_uvw1a"]
-[ext_resource type="Texture2D" uid="uid://coduk1iij8v0e" path="res://tower/c_tower.png" id="3_3q3mr"]
+[ext_resource type="Texture2D" uid="uid://txgyhj5b3sn4" path="res://tower/tower_2_atlas.png" id="3_nookv"]
 
 [node name="Tower" instance=ExtResource("1_n4d7k")]
 range = 5
@@ -12,4 +12,4 @@ disabled = true
 texture = ExtResource("2_uvw1a")
 
 [node name="Tower" parent="Control" index="1"]
-texture = ExtResource("3_3q3mr")
+texture = ExtResource("3_nookv")
