@@ -3,3 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://dmaukoretjy2r" path="res://tower/basic_tower.tscn" id="1_e83fp"]
 
 [node name="Tower" instance=ExtResource("1_e83fp")]
+
+[connection signal="damage" from="HitBox" to="." method="damage" flags=18]

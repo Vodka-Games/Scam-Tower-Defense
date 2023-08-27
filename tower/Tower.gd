@@ -5,6 +5,8 @@ var tile_size = 96
 @export var range:int
 @export var attack_gap: float
 @export var max_hp: int
+@export var disabled: bool
+
 var hp: int
 
 var is_floating = false
@@ -103,8 +105,9 @@ func create_bullet(target):
 	b_ins.set_target(target)
 
 func attack_target():
-	if is_broken:
+	if is_broken or disabled:
 		return
+		
 	if not target == null:
 		create_bullet(target)
 		$AnimationPlayer.play("shoot")

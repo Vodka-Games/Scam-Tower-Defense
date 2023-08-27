@@ -1,5 +1,7 @@
 extends Area2D
 
+signal demage(hp)
+
 var follower = null
 @export var speed :int
 
@@ -30,7 +32,7 @@ func _physics_process(delta):
 	if not follower is PathFollow2D:
 		return
 		
-	if follower.progress_ratio > 0.95:
+	if follower.progress_ratio > 0.90:
 		gameover()
 		
 	follower.progress += delta * speed

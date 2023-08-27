@@ -1911,6 +1911,7 @@ text = "GAMU OVER"
 stream = ExtResource("12_h3wo4")
 autoplay = true
 
+[connection signal="gameover" from="." to="." method="_on_gameover"]
 [connection signal="end_phase" from="Lv1_Path/Spawner" to="Lv1_Path/Spawner" method="_on_end_phase"]
 [connection signal="click_tower_item" from="UI/UI_ingame" to="TowerInstaller" method="_on_ui_ingame_click_tower_item"]
 [connection signal="pause" from="UI/UI_ingame" to="." method="_on_ui_ingame_pause"]
