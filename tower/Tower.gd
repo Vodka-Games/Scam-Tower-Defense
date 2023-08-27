@@ -29,7 +29,6 @@ func _ready():
 func install():
 	var g_pos = floor(self.global_position / 96)
 	if g_pos in Global.get_installed_tiles():
-		print('asdf')
 		return
 	
 	is_floating = false
@@ -42,7 +41,6 @@ func put_on_tile(pos):
 	self.global_position = floor(pos / tile_size) * tile_size
 
 func _unhandled_input(event):
-	print(event)
 	if is_floating:
 		if event is InputEventMouseButton:
 			install()

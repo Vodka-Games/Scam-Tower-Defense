@@ -114,7 +114,6 @@ func install_tower(tower_name, pos):
 				
 	var b_pos = floor(pos / 96)
 	installed_tiles.append(b_pos)
-	print(installed_tiles)
 	update_display()
 	
 func get_installed_tiles():

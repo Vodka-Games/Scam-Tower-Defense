@@ -27,7 +27,6 @@ func spawn_enemy():
 	c.show()
 	
 	if enemies.is_empty():
-		print('stop')
 		stop()
 	else:
 		$WaveTimer.wait_time = gap
