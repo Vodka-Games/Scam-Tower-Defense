@@ -4,6 +4,7 @@ signal gameover
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.money = 1000
 	pass # Replace with function body.
 
 

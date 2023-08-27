@@ -1695,6 +1695,9 @@ follow_viewport_enabled = true
 [node name="UI_ingame" parent="UI" instance=ExtResource("9_uwln7")]
 unique_name_in_owner = true
 
+[node name="shoplist" parent="UI/UI_ingame" index="3"]
+visible = false
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("10_rpo5k")]
 unique_name_in_owner = true
 visible = false
@@ -1772,7 +1775,7 @@ theme = ExtResource("14_jxntt")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "궁수의 즉발적인 포탑"
+text = "궁수의 arrow틱한 포탑"
 
 [node name="BCannon" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3" instance=ExtResource("16_infs8")]
 layout_mode = 2

@@ -102,6 +102,7 @@ func set_count_enemies(amount, spawner):
 	self.spawner = spawner
 	
 func decrease_enemies():
+	money+=50
 	count_enemies -= 1
 	assert(count_enemies >= 0)
 	
