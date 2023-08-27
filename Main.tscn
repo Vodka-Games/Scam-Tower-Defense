@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dxnf3klxl5wf1"]
+[gd_scene load_steps=28 format=3 uid="uid://dxnf3klxl5wf1"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_5sqsl"]
 [ext_resource type="Script" path="res://TowerInstaller.gd" id="1_ic3rl"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://3mjgfjws3uom" path="res://theme/ui_ingame.tscn" id="9_uwln7"]
 [ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://addons/EasyMenus/Scenes/pause_menu.tscn" id="10_rpo5k"]
 [ext_resource type="PackedScene" uid="uid://v7hqg6dcw1o4" path="res://enemy/fat_enemy.tscn" id="11_6ac8t"]
+[ext_resource type="PackedScene" uid="uid://vfanud2srnkd" path="res://enemy/hallow_enemy.tscn" id="12_gaqy4"]
 [ext_resource type="AudioStream" uid="uid://b23uwx2dy8xm" path="res://music/Pendulab BGM.mp3" id="12_h3wo4"]
 [ext_resource type="Texture2D" uid="uid://d3vfax1f7v2qu" path="res://store/girl.png" id="13_11io6"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="14_jxntt"]
@@ -1678,16 +1679,19 @@ position = Vector2(48, 48)
 unique_name_in_owner = true
 
 [node name="Wave" parent="Lv1_Path/Spawner" instance=ExtResource("6_hedsn")]
-gap = 5.0
-wait = 1.0
+gap = 3.0
 
 [node name="BasicEnemy" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
-[node name="BasicEnemy4" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("11_6ac8t")]
+[node name="FatEnemy" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("11_6ac8t")]
+
+[node name="HallowEnemy" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("12_gaqy4")]
 
 [node name="BasicEnemy2" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
 
-[node name="BasicEnemy3" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("3_0jexe")]
+[node name="FatEnemy2" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("11_6ac8t")]
+
+[node name="HallowEnemy2" parent="Lv1_Path/Spawner/Wave" instance=ExtResource("12_gaqy4")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

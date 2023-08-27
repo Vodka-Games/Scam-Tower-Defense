@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ewn0irq3jfxg"]
+
+[ext_resource type="PackedScene" uid="uid://dkjf8qbsohc72" path="res://spawner/wave.tscn" id="1_xgkqr"]
+[ext_resource type="PackedScene" uid="uid://ok2icsy37jau" path="res://enemy/basic_enemy.tscn" id="2_td2v0"]
+[ext_resource type="PackedScene" uid="uid://v7hqg6dcw1o4" path="res://enemy/fat_enemy.tscn" id="3_cudpc"]
+[ext_resource type="PackedScene" uid="uid://vfanud2srnkd" path="res://enemy/hallow_enemy.tscn" id="4_y35nd"]
+
+[node name="Wave" instance=ExtResource("1_xgkqr")]
+gap = 2.0
+wait = 2.0
+
+[node name="BasicEnemy" parent="." index="1" instance=ExtResource("2_td2v0")]
+
+[node name="FatEnemy" parent="." index="2" instance=ExtResource("3_cudpc")]
+
+[node name="HallowEnemy" parent="." index="3" instance=ExtResource("4_y35nd")]
+
+[node name="FatEnemy2" parent="." index="4" instance=ExtResource("3_cudpc")]
+
+[node name="FatEnemy3" parent="." index="5" instance=ExtResource("3_cudpc")]
+
+[node name="FatEnemy4" parent="." index="6" instance=ExtResource("3_cudpc")]
+
+[node name="FatEnemy5" parent="." index="7" instance=ExtResource("3_cudpc")]
