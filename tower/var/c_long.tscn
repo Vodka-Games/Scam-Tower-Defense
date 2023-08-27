@@ -12,4 +12,3 @@ texture = ExtResource("2_uvw1a")
 
 [node name="Tower" parent="Control" index="1"]
 texture = ExtResource("3_nookv")
-frame = 0
