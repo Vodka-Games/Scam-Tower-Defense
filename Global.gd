@@ -53,7 +53,7 @@ func get_money():
 	return money 
 
 func buy_tower(tower_name, amount):
-	var ret = buy_item(amount)
+	var ret = can_buy_item(amount)
 	
 	if not ret:
 		return false
@@ -62,7 +62,10 @@ func buy_tower(tower_name, amount):
 		if tower['name'] == tower_name:
 			tower['amount'] += 1
 			update_display()
+			buy_item(amount)
 			return true
+	if towers.size() >= 4:
+		return false
 	
 	var item_dict = {}
 	item_dict['name'] = tower_name
@@ -70,12 +73,16 @@ func buy_tower(tower_name, amount):
 	
 	towers.append(item_dict)
 	update_display()
+	buy_item(amount)
+	return true
 
 func buy_item(amount):
+	self.money -= amount
+
+func can_buy_item(amount):
 	if money < amount:
 		return false
 	else:
-		money -= amount
 		return true
 		
 func get_tower(idx):
@@ -105,13 +112,15 @@ func get_count_enemies():
 	return count_enemies
 	
 func install_tower(tower_name, pos):
+	print(towers)
 	for i in range(towers.size()):
 		if  towers[i]['name'] == tower_name:
 			towers[i]['amount'] -= 1
 			
 			if towers[i]['amount'] == 0:
 				towers.pop_at(i)
-				
+				print(towers)
+			break
 	var b_pos = floor(pos / 96)
 	installed_tiles.append(b_pos)
 	update_display()

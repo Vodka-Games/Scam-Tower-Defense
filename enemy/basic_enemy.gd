@@ -46,6 +46,7 @@ func damage(d):
 	hp -= d
 	
 	if hp <= 0:
+		$AnimationPlayer.play("break")
 		follower.queue_free()
 		Global.decrease_enemies()
 		# TODO: change to broken image
