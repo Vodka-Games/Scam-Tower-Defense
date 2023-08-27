@@ -47,6 +47,8 @@ func install():
 func broken():
 	is_broken = true
 	$HitBox/CollisionShape2D.disabled = true
+	await get_tree().create_timer(0.5).timeout
+	$AnimationPlayer.play("break")
 
 func put_on_tile(pos):
 	pos += Vector2.ONE * tile_size / 2
@@ -110,11 +112,15 @@ func attack_target():
 		$AnimationPlayer.play("shoot")
 		
 func damage(d):
+	$AnimationPlayer.play("dammage")
 	hp -= d
 	
 	if hp <= 0:
+		$AnimationPlayer.play("explode")
+		
 		# TODO: play break 
 		broken()
+		
 #		queue_free()
 
 func _on_area_entered(area):
