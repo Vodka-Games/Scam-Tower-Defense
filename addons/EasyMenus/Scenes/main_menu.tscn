@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dq6tvhqcy2aps"]
+[gd_scene load_steps=15 format=3 uid="uid://dq6tvhqcy2aps"]
 
 [ext_resource type="Script" path="res://addons/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
+[ext_resource type="Texture2D" uid="uid://dbi2ckfcscs38" path="res://theme/[피지컬게임] 사기도박에 당한 사령관.png" id="2_1i0tu"]
 [ext_resource type="PackedScene" uid="uid://qlskttl1wjr7" path="res://addons/EasyMenus/Scenes/options_menu.tscn" id="2_pwqpr"]
 [ext_resource type="Texture2D" uid="uid://cbib47gfa3i14" path="res://tower/tower_1_atlas.png" id="3_0qtbh"]
 [ext_resource type="Theme" uid="uid://bpmb1y4h21pr7" path="res://theme/maintheme.tres" id="3_3gf2d"]
@@ -22,6 +23,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lbw7r")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.427451)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="[피지컬게임]사기도박에당한사령관" type="Sprite2D" parent="Control"]
+modulate = Color(1, 1, 1, 0.0705882)
+position = Vector2(930, 686)
+scale = Vector2(0.816048, 0.816048)
+texture = ExtResource("2_1i0tu")
 
 [node name="Content" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
