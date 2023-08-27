@@ -4,9 +4,12 @@ var tile_size = 96
 
 @export var range:int
 @export var attack_gap: float
+@export var max_hp: int
+var hp: int
 
 var is_floating = false
 var is_install = false
+var is_broken = false
 
 var enemies_in_range = {}
 var tower_name
@@ -26,6 +29,7 @@ func _ready():
 	is_floating = true
 	$Range.shape.radius = range * tile_size
 	$AttackTimer.wait_time = attack_gap
+	hp = max_hp
 	
 func install():
 	var g_pos = floor(self.global_position / 96)
@@ -36,6 +40,10 @@ func install():
 	is_install = true
 	get_parent().install_tower(tower_name,self.global_position)
 	$AttackTimer.start()
+
+func broken():
+	is_broken = true
+	$HitBox/CollisionShape2D.disabled = true
 
 func put_on_tile(pos):
 	pos += Vector2.ONE * tile_size / 2
@@ -92,9 +100,19 @@ func create_bullet(target):
 	b_ins.set_target(target)
 
 func attack_target():
+	if is_broken:
+		return
 	if not target == null:
 		create_bullet(target)
 		$AnimationPlayer.play("shoot")
+		
+func damage(d):
+	hp -= d
+	
+	if hp <= 0:
+		# TODO: play break 
+		broken()
+#		queue_free()
 
 func _on_area_entered(area):
 	enemies_in_range[area.id] = area

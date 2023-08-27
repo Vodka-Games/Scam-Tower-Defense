@@ -5,6 +5,7 @@ extends Panel
 
 func _ready():
 	$Label.text = str(cost)
+	$TextureRect.texture = Global.get_tower_img(tower_name)
 
 func _on_gui_input(event):
 	if event is InputEventMouseButton:

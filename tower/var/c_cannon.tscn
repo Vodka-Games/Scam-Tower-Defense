@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkjhcltg615oc"]
+
+[ext_resource type="PackedScene" uid="uid://dmaukoretjy2r" path="res://tower/basic_tower.tscn" id="1_15gp8"]
+[ext_resource type="Texture2D" uid="uid://coduk1iij8v0e" path="res://tower/c_tower.png" id="2_2bymy"]
+
+[node name="Tower" instance=ExtResource("1_15gp8")]
+attack_gap = 0.333
+max_hp = 7
+
+[node name="Tower" parent="Control" index="1"]
+texture = ExtResource("2_2bymy")

@@ -1741,13 +1741,24 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "asdfasdfasdfasdfasdfasdf"
 
-[node name="Panel" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
+[node name="ACannon" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
 layout_mode = 2
 cost = 120
-tower_name = "classic"
+tower_name = "a_cannon"
+
+[node name="AShield" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "a_shield"
+
+[node name="ALong" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "a_long"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI/UI_store/Merchandise/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 32
 
 [node name="TextureRect" type="TextureRect" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
@@ -1761,8 +1772,24 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "asdfasdfasdfasdfasdfasdf"
 
+[node name="BCannon" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "b_cannon"
+
+[node name="BShield" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "b_shield"
+
+[node name="BLong" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer3" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "b_long"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/UI_store/Merchandise/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 32
 
 [node name="TextureRect" type="TextureRect" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -1775,6 +1802,21 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 text = "asdfasdfasdfasdfasdfasdf"
+
+[node name="CCannon" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "c_cannon"
+
+[node name="CShield" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "c_shield"
+
+[node name="CLong" parent="UI/UI_store/Merchandise/VBoxContainer/HBoxContainer2" instance=ExtResource("16_infs8")]
+layout_mode = 2
+cost = 120
+tower_name = "c_long"
 
 [node name="Panel" type="Panel" parent="UI/UI_store/Merchandise"]
 layout_mode = 1

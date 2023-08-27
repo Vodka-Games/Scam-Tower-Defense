@@ -105,7 +105,7 @@ func get_count_enemies():
 	return count_enemies
 	
 func install_tower(tower_name, pos):
-	for i in towers.size():
+	for i in range(towers.size()):
 		if  towers[i]['name'] == tower_name:
 			towers[i]['amount'] -= 1
 			

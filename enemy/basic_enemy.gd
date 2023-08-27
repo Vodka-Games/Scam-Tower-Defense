@@ -10,7 +10,7 @@ var id: int
 var rng = RandomNumberGenerator.new()
 
 var is_blocking = false
-var target = null
+var target = []
 
 func _ready():
 	var parent = get_parent()
@@ -51,18 +51,23 @@ func damage(d):
 		# TODO: change to broken image
 
 func attack_target():
-	pass
-
+	var tar_ref = weakref(target)
+	if tar_ref.get_ref() != null:
+		target.damage(1)
+	else:
+		target = false
+		$AttackTimer.stop()
 
 func _on_area_entered(area):
 	if area.name == "HitBox":
 		is_blocking = true
 		$AttackTimer.start()
+		target = area.get_parent()
 
 func _on_area_exited(area):
 	if area.name == "HitBox":
 		is_blocking = false
-
+		target = null
 
 func _on_attack_timer_timeout():
 	attack_target()

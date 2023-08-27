@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c82rf81xr21s3"]
+
+[ext_resource type="Texture2D" uid="uid://cdljkevj76dam" path="res://tower/shield.png" id="1_djcu8"]
+[ext_resource type="PackedScene" uid="uid://dmaukoretjy2r" path="res://tower/basic_tower.tscn" id="1_mwuby"]
+
+[node name="Tower" instance=ExtResource("1_mwuby")]
+range = 2
+
+[node name="Cannon" parent="Control" index="0"]
+texture = ExtResource("1_djcu8")
