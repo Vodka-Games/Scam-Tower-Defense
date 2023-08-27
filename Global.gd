@@ -96,10 +96,11 @@ func get_tower_scene(name):
 func get_tower_img(name):
 	return tower_dict[name]['img']
 	
-func set_count_enemies(amount, spawner):
-	count_enemies = amount
-	
+func set_spawner(spawner):
 	self.spawner = spawner
+	
+func increase_enemies():
+	count_enemies += 1
 	
 func decrease_enemies():
 	money+=50
@@ -113,14 +114,12 @@ func get_count_enemies():
 	return count_enemies
 	
 func install_tower(tower_name, pos):
-	print(towers)
 	for i in range(towers.size()):
 		if  towers[i]['name'] == tower_name:
 			towers[i]['amount'] -= 1
 			
 			if towers[i]['amount'] == 0:
 				towers.pop_at(i)
-				print(towers)
 			break
 	var b_pos = floor(pos / 96)
 	installed_tiles.append(b_pos)

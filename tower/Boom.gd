@@ -6,5 +6,6 @@ func _on_timer_timeout():
 	await $AnimationPlayer.animation_finished
 	var areas = get_overlapping_areas()
 	for a in areas:
-		a.emit_signal("demage",5)
+		
+		a.emit_signal("damage",100)
 	queue_free()

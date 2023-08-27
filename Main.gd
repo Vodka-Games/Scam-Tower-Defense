@@ -16,7 +16,7 @@ func _on_ui_ingame_pause():
 	$UI/PauseMenu.open_pause_menu()
 	
 func _on_start_pressed():
-	$%Spawner.start_phase() # TODO: update
+	$%Spawner.start_phase()
 	$%UI_ingame.start_phase()
 	$%UI_store.hide()
 	

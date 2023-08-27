@@ -14,6 +14,7 @@ func _ready():
 	for c in get_children():
 		if c is Area2D:
 			enemies.append(c)
+			Global.increase_enemies()
 
 func spawn_enemy():
 	var c = enemies.pop_front()
