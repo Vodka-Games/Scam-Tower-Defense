@@ -6,9 +6,13 @@
 
 [node name="Tower" instance=ExtResource("1_mwuby")]
 range = 2
+attack_gap = 0.0
+disabled = true
 
 [node name="Cannon" parent="Control" index="0"]
 texture = ExtResource("1_djcu8")
 
 [node name="Tower" parent="Control" index="1"]
 texture = ExtResource("3_grxbu")
+
+[connection signal="damage" from="HitBox" to="." method="damage" flags=18]

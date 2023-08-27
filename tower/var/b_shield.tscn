@@ -8,3 +8,5 @@ range = 2
 
 [node name="Cannon" parent="Control" index="0"]
 texture = ExtResource("2_k0gua")
+
+[connection signal="damage" from="HitBox" to="." method="damage" flags=18]
