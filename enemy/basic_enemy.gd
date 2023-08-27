@@ -23,15 +23,17 @@ func _ready():
 func _physics_process(delta):
 	if not follower is PathFollow2D:
 		return
-	if follower.progress_ratio > 0.95:
-		queue_free()
-		pass
-		# ending
+	if follower.progress_ratio > 0.1:
+		gameover()
 		
 	follower.progress += delta * speed
 	
 func get_progress():
 	return follower.progress
+	
+func gameover():
+	var main = get_tree().root.get_node('/root/Main')
+	main.emit_signal("gameover")
 
 func damage(d):
 	hp -= d

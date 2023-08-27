@@ -1,6 +1,6 @@
 extends Node2D
 
-
+signal gameover
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,3 +18,6 @@ func _on_start_pressed():
 	$%Spawner.start_phase() # TODO: update
 	$%UI_ingame.start_phase()
 	$%UI_store.hide()
+	
+func _on_gameover():
+	$%GameOver.show()
